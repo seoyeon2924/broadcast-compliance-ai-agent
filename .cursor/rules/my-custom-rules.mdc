@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## Core Principles
+- Always prioritize clear architecture and modular design over quick hacks.
+- Aim for an MVP first, but design all modules to be replaceable and extensible.
+- Prefer simple and explicit code over overly abstract patterns.
+
+## Project Constraints
+- No legacy system integration.
+
+## Development Rules
+- Explain the design and file structure before writing any code.
+- When writing code, provide complete, runnable modules.
+
+## Technology Preferences
+- Use a Python-based stack.
+- Use a local vector database (Chroma).
+- Unless otherwise specified, use Streamlit for the UI.

@@ -1,0 +1,13 @@
+# ── MVP Core ──
+streamlit>=1.32.0
+sqlalchemy>=2.0.0
+chromadb>=0.4.0
+python-dotenv>=1.0.0
+
+# ── Document Parsers ──
+PyMuPDF>=1.23.0
+openpyxl>=3.1.0
+python-docx>=1.0.0
+
+# ── LLM / Embedding (Stage 2+) ──
+openai>=1.0.0
