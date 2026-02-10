@@ -1,0 +1,222 @@
+[33mWARNING[0m:  [10-02-2026 14:59:38] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-02-2026 14:59:38] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component System
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component Posthog
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 14:59:38] Starting component SegmentAPI
+[32mINFO[0m:     [10-02-2026 14:59:39] Started server process [[36m8524[0m]
+[32mINFO[0m:     [10-02-2026 14:59:39] Waiting for application startup.
+[32mINFO[0m:     [10-02-2026 14:59:39] Application startup complete.
+[32mINFO[0m:     [10-02-2026 14:59:39] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [10-02-2026 14:59:40] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 14:59:40] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 14:59:40] Backing off send_request(...) for 0.1s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 14:59:41] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 14:59:41] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 14:59:42] Backing off send_request(...) for 1.0s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 14:59:43] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 14:59:43] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 14:59:44] Backing off send_request(...) for 3.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 14:59:47] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 14:59:48] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [10-02-2026 14:59:48] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [10-02-2026 15:25:40] ::1:57061 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 15:25:40] ::1:57062 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 15:25:40] ::1:57062 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 15:25:40] ::1:57061 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 15:25:40] ::1:57061 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 15:25:41] Starting component PersistentLocalHnswSegment
+[33mWARNING[0m:  [10-02-2026 17:01:23] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-02-2026 17:01:23] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component System
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:01:23] Starting component SegmentAPI
+[32mINFO[0m:     [10-02-2026 17:01:23] Started server process [[36m2172[0m]
+[32mINFO[0m:     [10-02-2026 17:01:23] Waiting for application startup.
+[32mINFO[0m:     [10-02-2026 17:01:23] Application startup complete.
+[32mINFO[0m:     [10-02-2026 17:01:23] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [10-02-2026 17:01:24] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:01:24] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:01:25] Backing off send_request(...) for 0.9s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:01:26] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:01:27] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:01:27] Backing off send_request(...) for 0.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:01:28] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:01:29] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:01:30] Backing off send_request(...) for 3.6s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:01:35] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:01:35] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [10-02-2026 17:01:36] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [10-02-2026 17:02:01] ::1:55726 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [10-02-2026 17:02:09] ::1:55750 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [10-02-2026 17:02:10] ::1:55750 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [10-02-2026 17:04:19] Shutting down
+[32mINFO[0m:     [10-02-2026 17:04:19] Waiting for application shutdown.
+[36mDEBUG[0m:    [10-02-2026 17:04:19] Stopping component System
+[36mDEBUG[0m:    [10-02-2026 17:04:19] Stopping component SegmentAPI
+[36mDEBUG[0m:    [10-02-2026 17:04:19] Stopping component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:04:20] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:04:20] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:04:20] Stopping component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:04:20] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:04:20] Stopping component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:04:20] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [10-02-2026 17:04:20] Application shutdown complete.
+[32mINFO[0m:     [10-02-2026 17:04:20] Finished server process [[36m2172[0m]
+[33mWARNING[0m:  [10-02-2026 17:04:34] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-02-2026 17:04:34] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component System
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:04:34] Starting component SegmentAPI
+[32mINFO[0m:     [10-02-2026 17:04:34] Started server process [[36m25192[0m]
+[32mINFO[0m:     [10-02-2026 17:04:34] Waiting for application startup.
+[32mINFO[0m:     [10-02-2026 17:04:34] Application startup complete.
+[32mINFO[0m:     [10-02-2026 17:04:34] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [10-02-2026 17:04:35] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:04:35] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:04:36] Backing off send_request(...) for 0.0s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:04:37] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:04:37] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:04:38] Backing off send_request(...) for 0.8s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:04:39] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:04:39] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:04:40] Backing off send_request(...) for 3.8s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:04:44] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:04:45] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [10-02-2026 17:04:45] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [10-02-2026 17:05:15] ::1:56011 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:05:15] ::1:56012 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:05:15] ::1:56012 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 17:05:15] Collection regulations already exists, returning existing collection.
+[32mINFO[0m:     [10-02-2026 17:05:15] ::1:56011 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:05:15] ::1:56011 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 17:05:15] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [10-02-2026 17:05:16] ::1:56011 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/9f37da1e-88c2-49bb-b2e7-53270bec1a19/upsert HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:05:16] ::1:56011 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/9f37da1e-88c2-49bb-b2e7-53270bec1a19/upsert HTTP/1.1" 200
+[33mWARNING[0m:  [10-02-2026 17:06:21] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-02-2026 17:06:21] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component System
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:06:21] Starting component SegmentAPI
+[32mINFO[0m:     [10-02-2026 17:06:21] Started server process [[36m23640[0m]
+[32mINFO[0m:     [10-02-2026 17:06:21] Waiting for application startup.
+[32mINFO[0m:     [10-02-2026 17:06:21] Application startup complete.
+[32mINFO[0m:     [10-02-2026 17:06:21] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [10-02-2026 17:06:22] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:06:23] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:06:23] Backing off send_request(...) for 0.9s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:06:25] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:06:25] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:06:26] Backing off send_request(...) for 1.1s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:06:27] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:06:28] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:06:29] Backing off send_request(...) for 2.6s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:06:32] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:06:32] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [10-02-2026 17:06:33] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [10-02-2026 17:14:17] Shutting down
+[32mINFO[0m:     [10-02-2026 17:14:17] Waiting for application shutdown.
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component System
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component SegmentAPI
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:14:17] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [10-02-2026 17:14:17] Application shutdown complete.
+[32mINFO[0m:     [10-02-2026 17:14:17] Finished server process [[36m23640[0m]
+[33mWARNING[0m:  [10-02-2026 17:14:25] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-02-2026 17:14:25] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component System
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:14:25] Starting component SegmentAPI
+[32mINFO[0m:     [10-02-2026 17:14:26] Started server process [[36m2500[0m]
+[32mINFO[0m:     [10-02-2026 17:14:26] Waiting for application startup.
+[32mINFO[0m:     [10-02-2026 17:14:26] Application startup complete.
+[32mINFO[0m:     [10-02-2026 17:14:26] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [10-02-2026 17:14:27] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:14:27] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:14:27] Backing off send_request(...) for 0.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:14:28] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:14:29] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:14:29] Backing off send_request(...) for 0.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:14:30] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:14:30] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:14:35] Backing off send_request(...) for 0.2s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:14:36] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:14:37] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [10-02-2026 17:14:37] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [10-02-2026 17:15:08] ::1:57063 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:15:08] ::1:57064 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:15:08] ::1:57064 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 17:15:08] Collection guidelines already exists, returning existing collection.
+[32mINFO[0m:     [10-02-2026 17:15:08] ::1:57063 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:15:08] ::1:57063 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 17:15:08] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [10-02-2026 17:15:09] ::1:57063 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/6210a412-7066-40b5-8b10-16e842b20c65/upsert HTTP/1.1" 200
+[33mWARNING[0m:  [10-02-2026 17:15:09] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:17:24] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-02-2026 17:17:25] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component System
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component SqliteDB
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component Posthog
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-02-2026 17:17:25] Starting component SegmentAPI
+[32mINFO[0m:     [10-02-2026 17:17:25] Started server process [[36m20592[0m]
+[32mINFO[0m:     [10-02-2026 17:17:25] Waiting for application startup.
+[32mINFO[0m:     [10-02-2026 17:17:25] Application startup complete.
+[32mINFO[0m:     [10-02-2026 17:17:25] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [10-02-2026 17:17:26] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:17:26] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:17:27] Backing off send_request(...) for 0.7s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:17:28] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:17:33] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:17:33] Backing off send_request(...) for 1.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:17:35] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:17:36] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [10-02-2026 17:17:36] Backing off send_request(...) for 1.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [10-02-2026 17:17:39] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [10-02-2026 17:17:39] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [10-02-2026 17:17:39] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [10-02-2026 17:18:23] ::1:57235 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:18:23] ::1:57236 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:18:23] ::1:57236 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 17:18:24] Collection guidelines already exists, returning existing collection.
+[32mINFO[0m:     [10-02-2026 17:18:24] ::1:57235 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [10-02-2026 17:18:24] ::1:57235 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [10-02-2026 17:18:24] Starting component PersistentLocalHnswSegment

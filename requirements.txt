@@ -5,9 +5,13 @@ chromadb>=0.4.0
 python-dotenv>=1.0.0
 
 # ── Document Parsers ──
-PyMuPDF>=1.23.0
+PyMuPDF>=1.24.0
 openpyxl>=3.1.0
 python-docx>=1.0.0
 
-# ── LLM / Embedding (Stage 2+) ──
+# ── LLM / Embedding ──
 openai>=1.0.0
+tenacity>=8.0.0
+
+# ── Text splitting (structure-aware chunking) ──
+langchain-text-splitters>=0.3.0

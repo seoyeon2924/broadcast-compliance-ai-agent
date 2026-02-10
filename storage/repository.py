@@ -149,6 +149,29 @@ class DocumentRepository:
                 doc.chunk_count = len(chunks_data)
             return len(chunks_data)
 
+    @staticmethod
+    def list_chunks(document_id: str) -> list[dict]:
+        """Return all chunks for a document, ordered by chunk_index."""
+        with get_db() as db:
+            chunks = (
+                db.query(Chunk)
+                .filter_by(document_id=document_id)
+                .order_by(Chunk.chunk_index)
+                .all()
+            )
+            return [
+                {
+                    "id": c.id,
+                    "chunk_index": c.chunk_index,
+                    "content_preview": c.content_preview,
+                    "page_or_row": c.page_or_row,
+                    "source_file": c.source_file,
+                    "doc_type": c.doc_type,
+                    "chroma_id": c.chroma_id,
+                }
+                for c in chunks
+            ]
+
 
 # ═══════════════════════════════════════════
 # ReviewRequest / ReviewItem

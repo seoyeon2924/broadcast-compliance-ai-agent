@@ -1,18 +1,48 @@
 """
-Ingest Service — file upload, parsing, chunking, indexing.
+Ingest Service — 파일 업로드, 파싱, 청킹, 임베딩, Chroma 인덱싱.
 
-Stage 1: saves the file and creates dummy chunks.
-Stage 2: real parsing (PDF/Excel/DOCX) + Chroma embedding.
+Pipeline:
+    파일 저장 → 파서(PDF/Excel) → 청킹 → 임베딩 → Chroma upsert → SQLite 저장
 """
 
+import time
 from datetime import datetime
+from pathlib import Path
+
+import streamlit as st
 
 from config import settings
 from storage.models import DocStatus
 from storage.repository import DocumentRepository, AuditRepository
+from storage.chroma_store import (
+    chroma_store,
+    get_collection_name_for_doc_type,
+)
+from ingest.parser_pdf import PDFParser
+from ingest.parser_excel import ExcelParser
+from ingest.chunker import Chunker
+from providers.embed_openai import OpenAIEmbedProvider
+
+_EMBED_BATCH = 8
+_CHROMA_BATCH = 40
+
+DOC_TYPE_NORMALIZE = {
+    "법령": "law",
+    "규정": "regulation",
+    "지침": "guideline",
+    "사례": "case",
+}
 
 
 class IngestService:
+
+    _embedder: OpenAIEmbedProvider | None = None
+
+    @classmethod
+    def _get_embedder(cls) -> OpenAIEmbedProvider:
+        if cls._embedder is None:
+            cls._embedder = OpenAIEmbedProvider()
+        return cls._embedder
 
     @staticmethod
     def upload_and_index(
@@ -22,18 +52,15 @@ class IngestService:
         scope: str,
         uploaded_by: str,
     ) -> dict:
-        """
-        Stage 1 implementation:
-          1. Save uploaded file to data/uploads/
-          2. Create ReferenceDocument (UPLOADED → INDEXING → INDEXED)
-          3. Create dummy chunks (real parsing in Stage 2)
-        """
-        # ── Save file ──
+        """전체 인덱싱 파이프라인 (동기)."""
+        start_time = time.time()
+
+        # 1. 파일 저장
         file_path = settings.UPLOAD_DIR / file.name
         with open(file_path, "wb") as f:
             f.write(file.getbuffer())
 
-        # ── Create document record ──
+        # 2. 문서 레코드
         doc_id = DocumentRepository.create(
             filename=file.name,
             doc_type=doc_type,
@@ -42,38 +69,112 @@ class IngestService:
             file_path=str(file_path),
             uploaded_by=uploaded_by,
         )
-
-        # ── Transition: UPLOADED → INDEXING ──
         DocumentRepository.update_status(doc_id, DocStatus.INDEXING.value)
 
         try:
-            # ── Stage 1: dummy chunks ──
-            dummy_chunks = []
-            dummy_count = 3
-            for i in range(dummy_count):
-                dummy_chunks.append(
-                    {
-                        "chunk_index": i,
-                        "content_preview": (
-                            f"[단계1 더미 청크 {i + 1}] "
-                            f"{file.name} 내용 미리보기..."
-                        ),
-                        "page_or_row": f"p.{i + 1}",
-                        "source_file": file.name,
-                        "doc_type": doc_type,
-                        "chroma_id": f"{doc_id}_chunk_{i}",
-                    }
-                )
-            chunk_count = DocumentRepository.create_chunks(doc_id, dummy_chunks)
+            # 3. 파싱 + 청킹 (문서 유형별 구조 인식)
+            suffix = Path(file.name).suffix.lower()
+            normalized = DOC_TYPE_NORMALIZE.get(doc_type, doc_type)
+            chunker = Chunker()
 
-            # ── Transition: INDEXING → INDEXED ──
+            if suffix == ".pdf":
+                full_text = PDFParser.get_full_text(str(file_path))
+                if not full_text.strip():
+                    raise ValueError("문서에서 추출된 텍스트가 없습니다.")
+                if normalized in ("law", "regulation"):
+                    chunks = (
+                        chunker.chunk_law(full_text, file.name)
+                        if normalized == "law"
+                        else chunker.chunk_regulation(full_text, file.name)
+                    )
+                elif normalized == "guideline":
+                    chunks = chunker.chunk_guideline(full_text, file.name)
+                else:
+                    chunks = chunker.chunk_fallback(full_text, file.name)
+            elif suffix == ".xlsx":
+                rows = ExcelParser.parse(str(file_path))
+                if not rows:
+                    raise ValueError("문서에서 추출된 행이 없습니다.")
+                chunks = chunker.chunk_cases(rows)
+            else:
+                raise ValueError(f"지원하지 않는 파일 형식: {suffix}")
+
+            if not chunks:
+                raise ValueError("문서에서 추출된 텍스트가 없습니다.")
+
+            texts = [(c["content"].strip() or " ") for c in chunks]
+            total = len(texts)
+            collection_key = get_collection_name_for_doc_type(doc_type)
+
+            # 4. 임베딩
+            embedder = IngestService._get_embedder()
+            all_embeddings: list[list[float]] = []
+            progress = st.progress(0, text="임베딩 생성 중...")
+            for i in range(0, total, _EMBED_BATCH):
+                end = min(i + _EMBED_BATCH, total)
+                all_embeddings.extend(embedder.embed(texts[i:end]))
+                progress.progress(end / total, text=f"임베딩 생성 중... ({end}/{total})")
+            progress.empty()
+
+            # 5. Chroma upsert (유형별 컬렉션 + 확장 메타데이터)
+            chroma_ids = [f"{doc_id}_chunk_{c['chunk_index']}" for c in chunks]
+            metadatas = [
+                {
+                    "document_id": doc_id,
+                    "doc_type": doc_type,
+                    "category": category or "",
+                    "scope": scope or "",
+                    "page_or_row": c.get("page_or_row", ""),
+                    "source_file": c.get("source_file", ""),
+                    "doc_structure_type": c.get("doc_structure_type", ""),
+                    "chapter": c.get("chapter", ""),
+                    "section": c.get("section", ""),
+                    "article_number": c.get("article_number", ""),
+                    "article_title": c.get("article_title", ""),
+                    "major_section": c.get("major_section", ""),
+                    "sub_section": c.get("sub_section", ""),
+                    "sub_detail": c.get("sub_detail", ""),
+                    "violation_type": c.get("violation_type", ""),
+                    "limit_expression": c.get("limit_expression", ""),
+                    "product_summary": c.get("product_summary", ""),
+                }
+                for c in chunks
+            ]
+            progress = st.progress(0, text="Chroma 저장 중...")
+            for i in range(0, total, _CHROMA_BATCH):
+                end = min(i + _CHROMA_BATCH, total)
+                chroma_store.upsert(
+                    ids=chroma_ids[i:end],
+                    documents=texts[i:end],
+                    embeddings=all_embeddings[i:end],
+                    metadatas=metadatas[i:end],
+                    collection_key=collection_key,
+                )
+                progress.progress(end / total, text=f"Chroma 저장 중... ({end}/{total})")
+            progress.empty()
+
+            # 6. SQLite 청크 레코드
+            chunk_records = [
+                {
+                    "chunk_index": c["chunk_index"],
+                    "content_preview": c["content"][:200],
+                    "page_or_row": c["page_or_row"],
+                    "source_file": c["source_file"],
+                    "doc_type": doc_type,
+                    "chroma_id": chroma_ids[idx],
+                }
+                for idx, c in enumerate(chunks)
+            ]
+            chunk_count = DocumentRepository.create_chunks(doc_id, chunk_records)
+
+            # 7. 완료
+            elapsed = round(time.time() - start_time, 1)
             DocumentRepository.update_status(
                 doc_id,
                 DocStatus.INDEXED.value,
                 chunk_count=chunk_count,
                 indexed_at=datetime.utcnow(),
             )
-
             AuditRepository.create_log(
                 event_type="INGEST",
                 entity_type="ReferenceDocument",
@@ -82,15 +183,16 @@ class IngestService:
                 detail={
                     "filename": file.name,
                     "chunk_count": chunk_count,
-                    "stage": "stage1-dummy",
+                    "elapsed_sec": elapsed,
+                    "mock_mode": settings.MOCK_MODE,
                 },
             )
-
             return {
                 "doc_id": doc_id,
                 "filename": file.name,
                 "chunk_count": chunk_count,
                 "status": DocStatus.INDEXED.value,
+                "elapsed_sec": elapsed,
             }
 
         except Exception as e:
@@ -101,19 +203,26 @@ class IngestService:
             )
             raise
 
+    # ──────────────────────────────────────────
+    # 조회
+    # ──────────────────────────────────────────
+
     @staticmethod
     def list_documents() -> list[dict]:
         return DocumentRepository.list_all()
 
     @staticmethod
+    def get_document(doc_id: str) -> dict | None:
+        return DocumentRepository.get(doc_id)
+
+    @staticmethod
+    def get_chunks(doc_id: str) -> list[dict]:
+        return DocumentRepository.list_chunks(doc_id)
+
+    @staticmethod
     def generate_advanced_metadata(document_id: str) -> dict:
-        """
-        Stage 2: LLM-based section_title / keywords extraction.
-        Stage 1: placeholder.
-        """
-        # TODO: Stage 2 — iterate over chunks, call LLM, update Chroma meta
         return {
             "document_id": document_id,
             "status": "NOT_IMPLEMENTED",
-            "message": "고급 메타데이터 생성은 단계2에서 구현됩니다.",
+            "message": "고급 메타데이터 생성은 추후 구현됩니다.",
         }
