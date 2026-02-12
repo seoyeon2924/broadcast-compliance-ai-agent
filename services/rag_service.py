@@ -1,14 +1,13 @@
 """
 RAG Service — AI compliance recommendation pipeline.
 
-Stage 1: generates dummy (mock) recommendations.
-Stage 2: real retrieval (Chroma) + LLM generation.
+Real retrieval (Chroma) + LLM generation via ReviewChain.
 """
 
-import random
 import time
 
-from storage.models import ReviewStatus, Judgment
+from chains.review_chain import ReviewChain
+from storage.models import ReviewStatus
 from storage.repository import ReviewRepository, AuditRepository
 
 
@@ -19,7 +18,7 @@ class RAGService:
         """
         Run AI recommendation for every ReviewItem in the request.
 
-        Stage 1: returns random mock judgments with dummy references.
+        Uses ReviewChain (Plan → Retrieve → Generate) for each item.
         """
         detail = ReviewRepository.get_detail(request_id)
         if not detail:
@@ -31,70 +30,27 @@ class RAGService:
         )
 
         try:
-            judgments = [
-                Judgment.VIOLATION.value,
-                Judgment.CAUTION.value,
-                Judgment.OK.value,
-            ]
-            reason_map = {
-                Judgment.VIOLATION.value: (
-                    "해당 문구에 과대광고 또는 허위 표현 소지가 있습니다."
-                ),
-                Judgment.CAUTION.value: (
-                    "해당 문구에 주의가 필요한 표현이 포함되어 있습니다."
-                ),
-                Judgment.OK.value: (
-                    "해당 문구는 관련 규정상 문제가 없는 것으로 판단됩니다."
-                ),
-            }
+            chain = ReviewChain(model_name="gpt-4o-mini")
 
             results = []
             for item in detail["items"]:
                 start = time.time()
-                time.sleep(0.05)  # simulate small latency
-                latency = int((time.time() - start) * 1000)
 
-                judgment = random.choice(judgments)
-                text_preview = item["text"][:30]
+                result = chain.run(
+                    item_text=item["text"],
+                    category=detail["request"]["category"],
+                    broadcast_type=detail["request"]["broadcast_type"],
+                )
+
+                latency = int((time.time() - start) * 1000)
 
                 rec_id = ReviewRepository.create_ai_recommendation(
                     review_item_id=item["id"],
-                    judgment=judgment,
-                    reason=(
-                        f"[단계1 더미] {reason_map[judgment]} "
-                        f"문구: '{text_preview}...'"
-                    ),
-                    references=[
-                        {
-                            "doc_filename": "예시_법령.pdf",
-                            "doc_type": "법령",
-                            "page_or_row": "p.5",
-                            "section_title": "제18조 (허위·과장 표시 금지)",
-                            "relevance_score": round(
-                                random.uniform(0.85, 0.99), 2
-                            ),
-                        },
-                        {
-                            "doc_filename": "방송심의지침.pdf",
-                            "doc_type": "지침",
-                            "page_or_row": "p.12",
-                            "section_title": "3.2.1 효능효과 표현 기준",
-                            "relevance_score": round(
-                                random.uniform(0.75, 0.92), 2
-                            ),
-                        },
-                        {
-                            "doc_filename": "심의사례집.xlsx",
-                            "doc_type": "사례",
-                            "page_or_row": "Sheet1:Row23",
-                            "section_title": "유사 사례 2024-A-0091",
-                            "relevance_score": round(
-                                random.uniform(0.60, 0.85), 2
-                            ),
-                        },
-                    ],
-                    model_name="dummy-mock-v1",
-                    prompt_version="v0.1-stage1",
+                    judgment=result.get("judgment", "주의"),
+                    reason=result.get("reason", ""),
+                    references=result.get("references", []),
+                    model_name=chain.model_name,
+                    prompt_version="v1.0-rag-pipeline",
                     latency_ms=latency,
                 )
                 results.append({"item_id": item["id"], "rec_id": rec_id})
@@ -111,7 +67,8 @@ class RAGService:
                 actor="system",
                 detail={
                     "item_count": len(detail["items"]),
-                    "model": "dummy-mock-v1",
+                    "model": chain.model_name,
+                    "pipeline": "v1.0-rag",
                 },
             )
 

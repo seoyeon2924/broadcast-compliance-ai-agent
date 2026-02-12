@@ -2337,3 +2337,435 @@ ValueError: Collection general does not exist.
 [33mWARNING[0m:  [12-02-2026 10:25:25] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
 [33mWARNING[0m:  [12-02-2026 10:25:25] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
 [31mERROR[0m:    [12-02-2026 10:25:26] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [12-02-2026 13:52:55] ::1:54411 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:52:55] ::1:54411 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:52:55] ::1:54412 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:52:55] ::1:54412 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:52:55] ::1:54412 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:52:55] ::1:54412 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 13:52:56] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:52:57] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:52:57] Backing off send_request(...) for 0.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:52:58] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:52:58] ::1:54412 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:52:58] ::1:54412 - "POST /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 13:52:58] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:52:58] Backing off send_request(...) for 0.2s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:52:59] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:52:59] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:53:00] Backing off send_request(...) for 0.9s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:53:01] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:53:01] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 13:53:02] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:53:03] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:53:03] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:53:04] Backing off send_request(...) for 0.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:53:04] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:53:05] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:53:05] Backing off send_request(...) for 1.0s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:53:06] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:53:07] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:53:07] Backing off send_request(...) for 2.8s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:53:10] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:53:11] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 13:53:11] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [12-02-2026 13:55:00] ::1:54856 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:00] ::1:54856 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:00] ::1:54857 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:00] ::1:54857 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:00] ::1:54857 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:00] ::1:54857 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:01] ::1:54857 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 13:55:01] ::1:54857 - "POST /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 13:55:01] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:55:01] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:55:02] Backing off send_request(...) for 0.1s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:55:02] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:55:03] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:55:03] Backing off send_request(...) for 0.2s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:55:04] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:55:04] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 13:55:04] Backing off send_request(...) for 1.1s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 13:55:06] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 13:55:06] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 13:55:07] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [12-02-2026 14:00:29] ::1:55106 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:29] ::1:55106 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:29] ::1:55107 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:29] ::1:55107 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:29] ::1:55107 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:29] ::1:55107 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:30] ::1:55107 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:30] ::1:55107 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:30] ::1:55107 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 14:00:30] ::1:55107 - "POST /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 14:00:30] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:30] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 14:00:31] Backing off send_request(...) for 0.9s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:32] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:33] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 14:00:33] Backing off send_request(...) for 1.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:35] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:35] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 14:00:35] Backing off send_request(...) for 1.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:37] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:38] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 14:00:38] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:39] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:39] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 14:00:40] Backing off send_request(...) for 0.1s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:40] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:40] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 14:00:41] Backing off send_request(...) for 1.1s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:42] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:43] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 14:00:43] Backing off send_request(...) for 3.5s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 14:00:47] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 14:00:47] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 14:00:48] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/count HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/get HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/count HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/get HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/count HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "POST /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/get HTTP/1.1" 200
+[31mERROR[0m:    [12-02-2026 16:15:55] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [12-02-2026 16:15:55] ::1:58366 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/count HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/get HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/count HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/get HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/count HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "POST /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/get HTTP/1.1" 200
+[31mERROR[0m:    [12-02-2026 16:15:57] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [12-02-2026 16:15:57] ::1:58366 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [12-02-2026 16:19:35] ::1:58534 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:35] ::1:58534 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:35] ::1:58535 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:35] ::1:58535 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:36] ::1:58535 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:36] ::1:58535 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 16:19:36] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:36] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:37] Backing off send_request(...) for 0.6s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [12-02-2026 16:19:37] ::1:58535 - "POST /api/v1/collections/4378e4ef-b169-470d-a147-24676031bf1c/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:37] ::1:58535 - "POST /api/v1/collections/136e187a-0d8f-4f19-8c79-534e40ea0ed9/query HTTP/1.1" 200
+[32mINFO[0m:     [12-02-2026 16:19:38] ::1:58535 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 16:19:38] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:38] ::1:58535 - "POST /api/v1/collections/eadb429f-8e12-43f2-82d7-dbae9b997427/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-02-2026 16:19:38] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:38] Backing off send_request(...) for 1.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 16:19:40] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:41] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:41] Backing off send_request(...) for 3.8s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 16:19:45] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:46] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 16:19:46] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 16:19:47] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:47] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:48] Backing off send_request(...) for 1.0s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 16:19:49] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:49] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:50] Backing off send_request(...) for 0.0s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 16:19:50] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:50] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [12-02-2026 16:19:51] Backing off send_request(...) for 3.8s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [12-02-2026 16:19:55] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [12-02-2026 16:19:55] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [12-02-2026 16:19:56] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
