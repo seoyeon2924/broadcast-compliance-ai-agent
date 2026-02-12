@@ -102,6 +102,11 @@ class IngestService:
             if not chunks:
                 raise ValueError("문서에서 추출된 텍스트가 없습니다.")
 
+
+            # chunks 생성 직후에 추가
+            print(f"청크 수: {len(chunks)}")
+            print(f"최대 청크 길이: {max(len(c['content']) for c in chunks)}")
+            print(f"평균 청크 길이: {sum(len(c['content']) for c in chunks) // len(chunks)}")
             texts = [(c["content"].strip() or " ") for c in chunks]
             total = len(texts)
             collection_key = get_collection_name_for_doc_type(doc_type)

@@ -6,12 +6,36 @@ Upload documents, run indexing, view document list.
 import streamlit as st
 
 from services.ingest_service import IngestService
+from storage.chroma_store import chroma_store
 from ui.components.status_badge import render_status_badge
 
 
 def render() -> None:
     st.header("기준지식 관리")
     st.caption("법령 / 규정 / 지침 / 사례 문서를 업로드하고 인덱싱합니다.")
+
+    # ──────────────────────────────────
+    # 벡터DB(Chroma) 상태
+    # ──────────────────────────────────
+    with st.expander("벡터DB(Chroma) 상태", expanded=False):
+        try:
+            stats = chroma_store.get_stats(sample_limit=5)
+            total = sum(s["count"] for s in stats)
+            st.metric("총 벡터 수", f"{total:,}개")
+            for s in stats:
+                if s["count"] == 0:
+                    continue
+                st.markdown(f"**{s['name']}** — {s['count']:,}개")
+                if s["sample_ids"]:
+                    st.caption("샘플 ID:")
+                    for sid in s["sample_ids"][:5]:
+                        st.code(sid, language=None)
+                if s["sample_docs"]:
+                    st.caption("샘플 문서(앞 120자):")
+                    for i, doc in enumerate(s["sample_docs"][:3], 1):
+                        st.text_area(f"샘플 {i}", doc, height=60, disabled=True, label_visibility="collapsed")
+        except Exception as e:
+            st.error(f"Chroma 연결 실패: {e}")
 
     # ──────────────────────────────────
     # Upload & Index

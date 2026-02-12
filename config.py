@@ -19,6 +19,8 @@ class Settings:
     DATA_DIR = BASE_DIR / "data"
     UPLOAD_DIR = DATA_DIR / "uploads"
     CHROMA_PERSIST_DIR = str(DATA_DIR / "chroma_db")
+    CHROMA_HOST = "localhost"
+    CHROMA_PORT = 8000
     SQLITE_URL = f"sqlite:///{DATA_DIR / 'compliance.db'}"
 
     # ── OpenAI (Stage 2+) ──

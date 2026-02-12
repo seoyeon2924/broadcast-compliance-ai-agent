@@ -1,7 +1,7 @@
 # ── MVP Core ──
 streamlit>=1.32.0
 sqlalchemy>=2.0.0
-chromadb>=0.4.0
+chromadb==0.4.24
 python-dotenv>=1.0.0
 
 # ── Document Parsers ──
@@ -12,6 +12,10 @@ python-docx>=1.0.0
 # ── LLM / Embedding ──
 openai>=1.0.0
 tenacity>=8.0.0
+
+# ── LangChain (Agent / Tools / RAG) ──
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
 
 # ── Text splitting (structure-aware chunking) ──
 langchain-text-splitters>=0.3.0
