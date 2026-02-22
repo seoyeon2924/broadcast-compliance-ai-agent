@@ -19127,3 +19127,167 @@ ValueError: Collection general does not exist.
 [32mINFO[0m:     [22-02-2026 22:40:22] ::1:51411 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
 [32mINFO[0m:     [22-02-2026 22:40:22] ::1:51411 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
 [32mINFO[0m:     [22-02-2026 22:40:22] ::1:51411 - "POST /api/v1/collections/c15a6b45-5552-43d0-98c9-b65477ebe768/query HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51860 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51860 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/c15a6b45-5552-43d0-98c9-b65477ebe768/count HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "POST /api/v1/collections/c15a6b45-5552-43d0-98c9-b65477ebe768/get HTTP/1.1" 200
+[31mERROR[0m:    [22-02-2026 22:53:45] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [22-02-2026 22:53:45] ::1:51861 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [22-02-2026 22:54:25] ::1:51876 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:54:25] ::1:51876 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:54:25] ::1:51876 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:54:25] ::1:51876 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:54:26] ::1:51876 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [22-02-2026 22:54:26] ::1:51876 - "POST /api/v1/collections/c15a6b45-5552-43d0-98c9-b65477ebe768/query HTTP/1.1" 200

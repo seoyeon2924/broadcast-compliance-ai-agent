@@ -205,52 +205,141 @@ def retrieve_node(state: ReviewState) -> dict:
 # ───────────────────────────────────────────
 
 def grade_documents_node(state: ReviewState) -> dict:
-    """Step 3: 검색된 문서의 관련성을 relevance_score 기반으로 필터링.
+    """Step 3: 검색된 문서의 관련성을 LLM으로 배치 평가.
 
-    LLM 재판정 방식에서 벡터 유사도 점수 기반 필터링으로 교체.
-    - 이미 top-k vector search로 선별된 청크이므로 LLM 재판정은 중복 작업
-    - 20번 직렬 LLM 호출(~31s) → 즉시 필터링(~0s)
-    - 사례(case_chunks)는 더 낮은 임계값 적용 (법령과 문체가 달라 점수가 낮게 나올 수 있음)
+    chunk별 개별 LLM 호출(N회) → 전체를 한 번에 배치 평가(1회)로 변경.
+    - 속도: N번 직렬 호출 제거, 단 1회 LLM 호출
+    - CRAG의 "검색 결과 검증" 단계를 실질적으로 활성화
     """
     start = time.time()
     context = state.get("context", {})
+    item_text = state["item_text"]
+    risk_types = state.get("plan", {}).get("risk_types", [])
+    risk_type = ", ".join(risk_types)
 
-    # cosine similarity 기반 (0~1). 낮출수록 더 많은 청크 통과.
-    POLICY_THRESHOLD = 0.30   # 법령·규정·지침
-    CASE_THRESHOLD   = 0.20   # 심의 사례 (법령과 문체가 달라 낮게 설정)
+    # 1. 모든 chunk를 인덱스와 함께 수집
+    all_chunks: list[tuple[str, int, dict]] = []
+    for category_key in ["law_chunks", "regulation_chunks", "guideline_chunks", "case_chunks"]:
+        for idx, chunk in enumerate(context.get(category_key, [])):
+            all_chunks.append((category_key, idx, chunk))
 
-    thresholds = {
-        "law_chunks":        POLICY_THRESHOLD,
-        "regulation_chunks": POLICY_THRESHOLD,
-        "guideline_chunks":  POLICY_THRESHOLD,
-        "case_chunks":       CASE_THRESHOLD,
-    }
+    if not all_chunks:
+        elapsed = round(time.time() - start, 2)
+        return {
+            "context": context,
+            "relevant_doc_count": 0,
+            "tool_logs": [{"step": "grade_documents", "total_evaluated": 0, "relevant_count": 0, "elapsed": elapsed}],
+        }
 
-    filtered_context: dict[str, list] = {k: [] for k in thresholds}
-    relevant_count = 0
+    # 2. 배치 평가용 문서 목록 생성 (상위 20개 제한으로 토큰 초과 방지)
+    chunks_to_grade = all_chunks[:10]
+    documents_for_grading = []
+    for i, (cat_key, idx, chunk) in enumerate(chunks_to_grade):
+        content = (chunk.get("content") or "")[:500]
+        source = chunk.get("metadata", {}).get("source_file", "N/A")
+        doc_type = chunk.get("metadata", {}).get("doc_type", cat_key)
+        documents_for_grading.append(
+            f"[문서 {i + 1}] 유형: {doc_type} | 출처: {source}\n내용: {content}"
+        )
 
-    for category_key, threshold in thresholds.items():
-        for chunk in context.get(category_key, []):
-            score = chunk.get("relevance_score", 0.0)
-            if score >= threshold:
-                filtered_context[category_key].append(chunk)
+    documents_text = "\n\n---\n\n".join(documents_for_grading)
+
+    # 3. 배치 평가 프롬프트
+    batch_grade_prompt = ChatPromptTemplate.from_messages([
+        ("system", """당신은 방송심의 문서 관련성 평가 전문가입니다.
+        주어진 심의 대상 문구와 위험 유형에 대해, 각 문서가 심의 판단에 관련이 있는지 평가하세요.
+
+        반드시 아래 JSON 형식으로만 응답하세요:
+        {{
+            "grades": [
+                {{"doc_index": 1, "relevance": "relevant", "reason": "이유"}},
+                {{"doc_index": 2, "relevance": "irrelevant", "reason": "이유"}}
+            ]
+        }}
+
+        relevance는 반드시 "relevant" 또는 "irrelevant" 중 하나입니다."""),
+                ("human", """## 심의 대상 문구
+        {item_text}
+
+        ## 위험 유형
+        {risk_type}
+
+        ## 평가 대상 문서들
+        {documents_text}
+
+        위 문서들 각각에 대해 심의 대상 문구와의 관련성을 평가해주세요."""),
+    ])
+
+    chain = batch_grade_prompt | _llm | _json_parser
+
+    # 4. LLM 호출 (1회 배치)
+    try:
+        grade_result = chain.invoke({
+            "item_text": item_text,
+            "risk_type": risk_type,
+            "documents_text": documents_text,
+        })
+
+        # 5. 관련 문서 인덱스 추출
+        relevant_indices: set[int] = set()
+        for g in grade_result.get("grades", []):
+            if g.get("relevance") == "relevant":
+                relevant_indices.add(g.get("doc_index", 0) - 1)  # 0-based
+
+        filtered_context: dict[str, list] = {
+            "law_chunks": [],
+            "regulation_chunks": [],
+            "guideline_chunks": [],
+            "case_chunks": [],
+        }
+        relevant_count = 0
+        for i, (cat_key, idx, chunk) in enumerate(chunks_to_grade):
+            if i in relevant_indices:
+                filtered_context[cat_key].append(chunk)
                 relevant_count += 1
 
-    elapsed = round(time.time() - start, 4)
-    total_evaluated = sum(len(v) for v in context.values())
-    log = {
-        "step": "grade_documents",
-        "method": "score_threshold",
-        "total_evaluated": total_evaluated,
-        "relevant_count": relevant_count,
-        "elapsed": elapsed,
-    }
+        # 상위 20개 제한으로 잘린 나머지는 원본 그대로 포함
+        for cat_key, idx, chunk in all_chunks[20:]:
+            filtered_context[cat_key].append(chunk)
+            relevant_count += 1
 
-    return {
-        "context": filtered_context,
-        "relevant_doc_count": relevant_count,
-        "tool_logs": [log],
-    }
+        elapsed = round(time.time() - start, 2)
+        log = {
+            "step": "grade_documents",
+            "method": "llm_batch",
+            "total_evaluated": len(chunks_to_grade),
+            "relevant_count": relevant_count,
+            "filtered_out": len(chunks_to_grade) - len(relevant_indices),
+            "elapsed": elapsed,
+        }
+        logger.info(
+            "grade_documents: %d개 중 %d개 관련 문서 선별 (%.2fs)",
+            len(chunks_to_grade), relevant_count, elapsed,
+        )
+
+        return {
+            "context": filtered_context,
+            "relevant_doc_count": relevant_count,
+            "tool_logs": [log],
+        }
+
+    except Exception as e:
+        # 에러 시 보수적으로 전부 포함
+        logger.error("grade_documents LLM 호출 실패: %s", e)
+        elapsed = round(time.time() - start, 2)
+        total = sum(len(v) for v in context.values() if isinstance(v, list))
+        return {
+            "context": context,
+            "relevant_doc_count": total,
+            "tool_logs": [{
+                "step": "grade_documents",
+                "method": "fallback_passthrough",
+                "error": str(e),
+                "total_evaluated": total,
+                "relevant_count": total,
+                "elapsed": elapsed,
+            }],
+        }
 
 
 # ───────────────────────────────────────────
