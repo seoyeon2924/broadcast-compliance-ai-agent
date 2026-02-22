@@ -5,7 +5,18 @@ Run:
     streamlit run app.py
 """
 
+import sys
+
+
+# ── .env 로드: LangChain/LangSmith 환경변수가 임포트 전에 적용되도록 최우선 실행 ──
+
+from dotenv import load_dotenv
+load_dotenv()
+
+
+
 import streamlit as st
+
 
 # ── Page config (must be first Streamlit call) ──
 st.set_page_config(
@@ -17,7 +28,9 @@ st.set_page_config(
 # ── Database initialisation ──
 from storage.database import init_db  # noqa: E402
 
+print("[DEBUG] init_db 전", flush=True)
 init_db()
+print("[DEBUG] init_db 후", flush=True)
 
 # ── Session state defaults ──
 if "current_page" not in st.session_state:
@@ -60,10 +73,14 @@ with st.sidebar:
             st.session_state.current_page = "list"
             st.rerun()
 
+
 # ── Import renderers ──
 from ui.page_knowledge import render as render_knowledge  # noqa: E402
+
 from ui.page_request import render as render_request  # noqa: E402
+
 from ui.page_list import render as render_list  # noqa: E402
+
 from ui.page_review_detail import render as render_detail  # noqa: E402
 
 RENDERERS: dict[str, callable] = {

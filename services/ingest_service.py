@@ -23,8 +23,11 @@ from ingest.parser_excel import ExcelParser
 from ingest.chunker import Chunker
 from providers.embed_openai import OpenAIEmbedProvider
 
-_EMBED_BATCH = 8
-_CHROMA_BATCH = 40
+# 대용량 사례(Excel) 시 메모리·연결 부담 완화: 한 번에 처리하는 단위
+_PIPELINE_BATCH = 50   # 이 개수씩 임베딩 후 Chroma 저장 (전체를 메모리에 쌓지 않음)
+_EMBED_BATCH = 8       # OpenAI 임베딩 API 한 번에 보내는 개수 (embedder 내부 배치)
+_CHROMA_BATCH = 30     # Chroma upsert 한 번에 보내는 개수
+_CHROMA_SLEEP = 0.03   # Chroma 배치 간 짧은 대기(초) — 서버 과부하 완화
 
 DOC_TYPE_NORMALIZE = {
     "법령": "law",
@@ -110,18 +113,6 @@ class IngestService:
             texts = [(c["content"].strip() or " ") for c in chunks]
             total = len(texts)
             collection_key = get_collection_name_for_doc_type(doc_type)
-
-            # 4. 임베딩
-            embedder = IngestService._get_embedder()
-            all_embeddings: list[list[float]] = []
-            progress = st.progress(0, text="임베딩 생성 중...")
-            for i in range(0, total, _EMBED_BATCH):
-                end = min(i + _EMBED_BATCH, total)
-                all_embeddings.extend(embedder.embed(texts[i:end]))
-                progress.progress(end / total, text=f"임베딩 생성 중... ({end}/{total})")
-            progress.empty()
-
-            # 5. Chroma upsert (유형별 컬렉션 + 확장 메타데이터)
             chroma_ids = [f"{doc_id}_chunk_{c['chunk_index']}" for c in chunks]
             metadatas = [
                 {
@@ -145,17 +136,27 @@ class IngestService:
                 }
                 for c in chunks
             ]
-            progress = st.progress(0, text="Chroma 저장 중...")
-            for i in range(0, total, _CHROMA_BATCH):
-                end = min(i + _CHROMA_BATCH, total)
-                chroma_store.upsert(
-                    ids=chroma_ids[i:end],
-                    documents=texts[i:end],
-                    embeddings=all_embeddings[i:end],
-                    metadatas=metadatas[i:end],
-                    collection_key=collection_key,
-                )
-                progress.progress(end / total, text=f"Chroma 저장 중... ({end}/{total})")
+
+            # 4·5. 배치 단위로 임베딩 → Chroma 저장 (전체 임베딩을 메모리에 쌓지 않음, 대용량 사례 대응)
+            embedder = IngestService._get_embedder()
+            progress = st.progress(0, text="임베딩 및 Chroma 저장 중...")
+            for i in range(0, total, _PIPELINE_BATCH):
+                end = min(i + _PIPELINE_BATCH, total)
+                batch_texts = texts[i:end]
+                batch_embeddings = embedder.embed(batch_texts)
+                # Chroma는 작은 단위로 나눠 보냄 (연결/타임아웃 완화)
+                for j in range(0, len(batch_texts), _CHROMA_BATCH):
+                    j_end = min(j + _CHROMA_BATCH, len(batch_texts))
+                    chroma_store.upsert(
+                        ids=chroma_ids[i + j : i + j_end],
+                        documents=batch_texts[j:j_end],
+                        embeddings=batch_embeddings[j:j_end],
+                        metadatas=metadatas[i + j : i + j_end],
+                        collection_key=collection_key,
+                    )
+                    if _CHROMA_SLEEP and _CHROMA_SLEEP > 0:
+                        time.sleep(_CHROMA_SLEEP)
+                progress.progress(end / total, text=f"임베딩·Chroma 저장 중... ({end}/{total})")
             progress.empty()
 
             # 6. SQLite 청크 레코드

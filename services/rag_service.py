@@ -6,6 +6,8 @@ Real retrieval (Chroma) + LLM generation via ReviewChain.
 
 import time
 
+from langsmith import traceable
+
 from chains.review_chain import ReviewChain
 from storage.models import ReviewStatus
 from storage.repository import ReviewRepository, AuditRepository
@@ -14,6 +16,7 @@ from storage.repository import ReviewRepository, AuditRepository
 class RAGService:
 
     @staticmethod
+    @traceable(name="run_recommendation", tags=["rag-service"])
     def run_recommendation(request_id: str) -> list[dict]:
         """
         Run AI recommendation for every ReviewItem in the request.

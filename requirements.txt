@@ -16,6 +16,8 @@ tenacity>=8.0.0
 # ── LangChain (Agent / Tools / RAG) ──
 langchain-core>=0.3.0
 langchain-openai>=0.2.0
+langgraph>=0.2.0
+langsmith>=0.1.0
 
 # ── Text splitting (structure-aware chunking) ──
 langchain-text-splitters>=0.3.0
