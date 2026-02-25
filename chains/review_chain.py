@@ -93,12 +93,57 @@ def _format_chunks(chunks: list[dict], label: str) -> str:
         source = meta.get("source_file") or meta.get("doc_filename") or "N/A"
         doc_type = meta.get("doc_type", "N/A")
         section = meta.get("article_title") or meta.get("section") or meta.get("section_title") or "N/A"
-        lines.append(
-            f"[{label} {i}] (유사도: {score}, ID: {cid})\n"
-            f"  출처: {source} | 유형: {doc_type} | 섹션: {section}\n"
-            f"  내용: {content}"
-        )
+
+        # 심의 사례는 처리번호·처리일자·심의지적코드를 구체적으로 표시
+        case_number = meta.get("case_number", "")
+        case_date = meta.get("case_date", "")
+        violation_type = meta.get("violation_type", "")
+        if case_number or case_date:
+            case_ref = ""
+            if case_date:
+                case_ref += f"{case_date}에 나온 "
+            if case_number:
+                case_ref += f"처리번호 {case_number} 건"
+            if violation_type:
+                case_ref += f"에서 [{violation_type}] 지적"
+            lines.append(
+                f"[{label} {i}] (유사도: {score})\n"
+                f"  처리건: {case_ref}\n"
+                f"  내용: {content}"
+            )
+        else:
+            lines.append(
+                f"[{label} {i}] (유사도: {score}, ID: {cid})\n"
+                f"  출처: {source} | 유형: {doc_type} | 섹션: {section}\n"
+                f"  내용: {content}"
+            )
     return "\n\n".join(lines)
+
+
+def _context_to_refs(context: dict) -> list[dict]:
+    """컨텍스트의 모든 청크를 reference 포맷으로 변환."""
+    label_map = {
+        "law_chunks": "법령",
+        "regulation_chunks": "규정",
+        "guideline_chunks": "지침",
+        "case_chunks": "사례",
+    }
+    refs = []
+    for cat_key, default_label in label_map.items():
+        for chunk in context.get(cat_key, []):
+            meta = chunk.get("metadata", {})
+            refs.append({
+                "chroma_id": chunk.get("chroma_id", ""),
+                "doc_filename": meta.get("source_file") or meta.get("doc_filename") or "",
+                "doc_type": meta.get("doc_type", default_label),
+                "case_number": meta.get("case_number", ""),
+                "case_date": meta.get("case_date", ""),
+                "article_number": meta.get("article_title") or meta.get("article_number") or "",
+                "section_title": meta.get("section") or meta.get("section_title") or "",
+                "relevance_score": chunk.get("relevance_score", 0),
+                "content": (chunk.get("content") or "")[:600],
+            })
+    return refs
 
 
 def _query_to_str(q: str | list[str] | None, fallback: str) -> str:
@@ -438,6 +483,13 @@ def generate_node(state: ReviewState) -> dict:
         logger.error("Generate 실패: %s", e)
         default_result["reason"] = f"AI 생성 중 오류 발생: {str(e)}"
         result = default_result
+
+    # LLM이 선택한 references + 검색된 전체 청크를 합쳐서 보완
+    existing_ids = {r.get("chroma_id") for r in result.get("references", []) if r.get("chroma_id")}
+    for ref in _context_to_refs(context):
+        if ref["chroma_id"] not in existing_ids:
+            result.setdefault("references", []).append(ref)
+            existing_ids.add(ref["chroma_id"])
 
     elapsed = round(time.time() - start, 2)
     log = {"step": "generate", "judgment": result.get("judgment", ""), "elapsed": elapsed}

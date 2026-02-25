@@ -185,13 +185,33 @@ def _render_recommendation(rec: dict) -> None:
     if refs:
         st.markdown("**근거:**")
         for i, ref in enumerate(refs, 1):
-            st.markdown(
-                f"&nbsp;&nbsp;{i}. `{ref.get('doc_filename', '-')}` · "
-                f"{ref.get('page_or_row', '-')} · "
-                f"{ref.get('section_title', '-')} · "
-                f"[{ref.get('doc_type', '-')}] "
-                f"score: {ref.get('relevance_score', '-')}"
-            )
+            doc_type = ref.get("doc_type", "-")
+            case_number = ref.get("case_number", "")
+            case_date = ref.get("case_date", "")
+            article_number = ref.get("article_number", "")
+            doc_filename = ref.get("doc_filename", "-")
+            section_title = ref.get("section_title", "")
+            score = ref.get("relevance_score", "-")
+            content = ref.get("content", "")
+
+            if doc_type == "사례" and case_number:
+                date_str = f" ({case_date})" if case_date else ""
+                label = f"처리번호 {case_number}{date_str}"
+            elif article_number:
+                label = f"`{doc_filename}` {article_number}"
+                if section_title:
+                    label += f" ({section_title})"
+            else:
+                label = f"`{doc_filename}`"
+                if section_title:
+                    label += f" · {section_title}"
+
+            expander_title = f"{i}. [{doc_type}] {label} · score: {score}"
+            with st.expander(expander_title):
+                if content:
+                    st.caption(content)
+                else:
+                    st.caption("(내용 없음)")
 
     st.caption(
         f"모델: {rec.get('model_name', '-')} · "

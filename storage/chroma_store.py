@@ -171,5 +171,20 @@ class ChromaStore:
         name = collection_key or COLLECTION_GENERAL
         self.get_collection(name).delete(ids=ids)
 
+    def reset_collection(self, collection_key: str) -> None:
+        """컬렉션을 삭제 후 재생성 (기존 벡터 전체 초기화).
+
+        Args:
+            collection_key: 초기화할 컬렉션 키 (예: "cases")
+        """
+        name = collection_key or COLLECTION_GENERAL
+        try:
+            self.client.delete_collection(name)
+        except Exception:
+            pass
+        # 캐시 제거 후 재생성
+        self._collections.pop(name, None)
+        self.get_collection(name)
+
 
 chroma_store = ChromaStore()

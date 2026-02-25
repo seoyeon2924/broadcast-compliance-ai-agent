@@ -37,6 +37,16 @@ def render() -> None:
         except Exception as e:
             st.error(f"Chroma 연결 실패: {e}")
 
+        st.divider()
+        st.caption("⚠️ 심의 사례 컬렉션을 초기화하면 기존 벡터가 모두 삭제됩니다. 새 파일 인덱싱 전에 실행하세요.")
+        if st.button("심의사례(cases) 컬렉션 초기화", type="secondary", key="reset_cases"):
+            try:
+                chroma_store.reset_collection("cases")
+                st.success("cases 컬렉션이 초기화되었습니다. 새 심의사례 파일을 업로드하여 인덱싱하세요.")
+                st.rerun()
+            except Exception as e:
+                st.error(f"초기화 실패: {e}")
+
     # ──────────────────────────────────
     # Upload & Index
     # ──────────────────────────────────

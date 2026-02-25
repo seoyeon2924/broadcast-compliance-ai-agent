@@ -261,12 +261,17 @@ class Chunker:
     # ── 과거 심의 사례 (Excel) ──
 
     def chunk_cases(self, rows: list[dict]) -> list[dict]:
-        """과거 심의 지적 사례: 컬럼A 섹션 분리, 심의의견+수정+주의 → content, 상품정보 앞 100자 → product_summary."""
+        """과거 심의 지적 사례: 컬럼 섹션 분리, 심의의견+수정+주의 → content, 상품정보 앞 100자 → product_summary.
+
+        처리번호·처리일자를 메타데이터와 content 앞에 포함하여 구체적인 처리건 제시에 활용.
+        """
         chunks_out: list[dict] = []
         for row_idx, row in enumerate(rows):
             opinion = row.get("opinion_note", "") or ""
             violation_type = row.get("violation_type", "") or ""
             limit_expr = row.get("limit_expression", "") or ""
+            case_number = row.get("case_number", "") or ""
+            case_date = row.get("case_date", "") or ""
             sheet = row.get("sheet", "")
             row_num = row.get("row", row_idx + 2)
             source_file = row.get("source_file", "")
@@ -295,10 +300,26 @@ class Chunker:
             if not content.strip():
                 content = opinion
 
+            # 처리번호·처리일자를 content 앞에 추가 → 임베딩 및 검색 시 식별 가능
+            header_parts: list[str] = []
+            if case_number:
+                header_parts.append(f"[처리번호: {case_number}]")
+            if case_date:
+                header_parts.append(f"[처리일자: {case_date}]")
+            if violation_type:
+                header_parts.append(f"[심의지적코드: {violation_type}]")
+            if header_parts:
+                content = " ".join(header_parts) + "\n" + content
+
+            # page_or_row: 처리번호가 있으면 사용, 없으면 시트:행 번호
+            page_or_row = f"처리번호:{case_number}" if case_number else f"{sheet}:Row{row_num}"
+
             base_meta = {
-                "page_or_row": f"{sheet}:Row{row_num}",
+                "page_or_row": page_or_row,
                 "source_file": source_file,
                 "doc_structure_type": "case",
+                "case_number": _truncate(case_number, 50),
+                "case_date": _truncate(case_date, 20),
                 "chapter": "",
                 "section": "",
                 "article_number": "",
@@ -336,6 +357,8 @@ class Chunker:
                 "source_file": source_file,
                 "chunk_index": i,
                 "doc_structure_type": "",
+                "case_number": "",
+                "case_date": "",
                 "chapter": "",
                 "section": "",
                 "article_number": "",
@@ -359,7 +382,7 @@ class Chunker:
 
     def chunk_rows(self, rows: list[dict]) -> list[dict]:
         """기존 Excel 청킹 — chunk_cases로 위임. opinion_note 등 없으면 기존 형식 가정."""
-        if rows and "opinion_note" in rows[0]:
+        if rows and ("opinion_note" in rows[0] or "case_number" in rows[0]):
             return self.chunk_cases(rows)
         # 레거시: text 필드만 있는 경우
         return [
@@ -369,6 +392,8 @@ class Chunker:
                 "source_file": r.get("source_file", ""),
                 "chunk_index": i,
                 "doc_structure_type": "case",
+                "case_number": "",
+                "case_date": "",
                 "chapter": "",
                 "section": "",
                 "article_number": "",

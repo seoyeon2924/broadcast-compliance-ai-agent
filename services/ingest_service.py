@@ -123,6 +123,8 @@ class IngestService:
                     "page_or_row": c.get("page_or_row", ""),
                     "source_file": c.get("source_file", ""),
                     "doc_structure_type": c.get("doc_structure_type", ""),
+                    "case_number": c.get("case_number", ""),
+                    "case_date": c.get("case_date", ""),
                     "chapter": c.get("chapter", ""),
                     "section": c.get("section", ""),
                     "article_number": c.get("article_number", ""),
