@@ -7,6 +7,29 @@ import streamlit as st
 
 from services.review_service import ReviewService
 
+CATEGORIES = [
+    "건강기능식품",
+    "식품/음료",
+    "화장품/뷰티",
+    "의류/패션",
+    "가전/디지털",
+    "주방/생활용품",
+    "스포츠/레저",
+    "유아/완구",
+    "가구/인테리어",
+    "여행/서비스",
+    "보험/금융",
+    "기타",
+]
+
+BROADCAST_TYPES = [
+    "생방송",
+    "녹화방송",
+    "T커머스",
+    "인포머셜",
+    "데이터홈쇼핑",
+]
+
 
 def render() -> None:
     st.header("심의요청 등록")
@@ -20,12 +43,12 @@ def render() -> None:
                 "상품명 *", placeholder="예: 콜라겐 젤리"
             )
         with col2:
-            category = st.text_input(
-                "카테고리", placeholder="예: 건강기능식품"
+            category = st.selectbox(
+                "카테고리 *", CATEGORIES
             )
         with col3:
             broadcast_type = st.selectbox(
-                "방송유형", ["생방송", "녹화", "T커머스"]
+                "방송유형 *", BROADCAST_TYPES
             )
 
         requested_by = st.text_input(

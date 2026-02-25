@@ -181,9 +181,11 @@ def _render_recommendation(rec: dict) -> None:
     st.markdown(f"**판단:** {icon} {rec['judgment']}")
     st.markdown(f"**사유:** {rec['reason']}")
 
-    refs = rec.get("references") or []
+    all_refs = rec.get("references") or []
+    refs = [r for r in all_refs if (r.get("content") or "").strip()]
+
     if refs:
-        st.markdown("**근거:**")
+        st.markdown(f"**근거:** ({len(refs)}건)")
         for i, ref in enumerate(refs, 1):
             doc_type = ref.get("doc_type", "-")
             case_number = ref.get("case_number", "")
@@ -208,10 +210,9 @@ def _render_recommendation(rec: dict) -> None:
 
             expander_title = f"{i}. [{doc_type}] {label} · score: {score}"
             with st.expander(expander_title):
-                if content:
-                    st.caption(content)
-                else:
-                    st.caption("(내용 없음)")
+                st.caption(content)
+    elif all_refs:
+        st.caption("⚠️ 근거 문서를 검색했으나 유효한 내용을 가져오지 못했습니다.")
 
     st.caption(
         f"모델: {rec.get('model_name', '-')} · "

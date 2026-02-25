@@ -9,6 +9,31 @@ from services.ingest_service import IngestService
 from storage.chroma_store import chroma_store
 from ui.components.status_badge import render_status_badge
 
+CATEGORIES = [
+    "전체",
+    "건강기능식품",
+    "식품/음료",
+    "화장품/뷰티",
+    "의류/패션",
+    "가전/디지털",
+    "주방/생활용품",
+    "스포츠/레저",
+    "유아/완구",
+    "가구/인테리어",
+    "여행/서비스",
+    "보험/금융",
+    "기타",
+]
+
+SCOPES = [
+    "전체",
+    "TV홈쇼핑",
+    "T커머스",
+    "데이터홈쇼핑",
+    "인포머셜",
+    "라이브커머스",
+]
+
 
 def render() -> None:
     st.header("기준지식 관리")
@@ -62,12 +87,12 @@ def render() -> None:
                 "문서 유형", ["법령", "규정", "지침", "사례"]
             )
         with col2:
-            category = st.text_input(
-                "카테고리", placeholder="예: 식품, 건강기능식품"
+            category = st.selectbox(
+                "카테고리", CATEGORIES
             )
         with col3:
-            scope = st.text_input(
-                "적용범위", placeholder="예: TV홈쇼핑"
+            scope = st.selectbox(
+                "적용범위", SCOPES
             )
 
         if st.button(

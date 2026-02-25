@@ -19918,3 +19918,164 @@ ValueError: Collection general does not exist.
 [33mWARNING[0m:  [24-02-2026 17:06:54] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
 [31mERROR[0m:    [24-02-2026 17:06:54] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
 [32mINFO[0m:     [24-02-2026 17:06:56] ::1:50396 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
+[33mWARNING[0m:  [25-02-2026 16:33:37] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [25-02-2026 16:33:38] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component System
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component SqliteDB
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component Posthog
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [25-02-2026 16:33:38] Starting component SegmentAPI
+[32mINFO[0m:     [25-02-2026 16:33:38] Started server process [[36m11524[0m]
+[32mINFO[0m:     [25-02-2026 16:33:38] Waiting for application startup.
+[32mINFO[0m:     [25-02-2026 16:33:38] Application startup complete.
+[32mINFO[0m:     [25-02-2026 16:33:38] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52299 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52299 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[36mDEBUG[0m:    [25-02-2026 16:33:57] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[36mDEBUG[0m:    [25-02-2026 16:33:57] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/count HTTP/1.1" 200
+[36mDEBUG[0m:    [25-02-2026 16:33:57] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:33:57] ::1:52300 - "GET /api/v1/collections/66656510-6965-4bb6-8f84-b5a36ccbf167/count HTTP/1.1" 200
+[33mWARNING[0m:  [25-02-2026 16:33:58] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:33:58] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:33:59] Backing off send_request(...) for 0.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:34:00] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:34:00] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:34:00] Backing off send_request(...) for 1.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:34:02] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:34:03] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:34:03] Backing off send_request(...) for 1.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:34:05] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:34:05] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [25-02-2026 16:34:05] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:54] ::1:52360 - "GET /api/v1/collections/66656510-6965-4bb6-8f84-b5a36ccbf167/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:36:59] ::1:52360 - "GET /api/v1/collections/66656510-6965-4bb6-8f84-b5a36ccbf167/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:37:26] ::1:52360 - "GET /api/v1/collections/66656510-6965-4bb6-8f84-b5a36ccbf167/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:30] ::1:52451 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:30] ::1:52451 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:41:31] ::1:52452 - "GET /api/v1/collections/66656510-6965-4bb6-8f84-b5a36ccbf167/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:07] ::1:52506 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:07] ::1:52506 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:07] ::1:52506 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:07] ::1:52506 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[33mWARNING[0m:  [25-02-2026 16:43:08] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:08] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:09] Backing off send_request(...) for 0.2s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:09] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:09] ::1:52506 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:10] ::1:52506 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
+[33mWARNING[0m:  [25-02-2026 16:43:10] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:10] Backing off send_request(...) for 0.2s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:11] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:11] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:11] Backing off send_request(...) for 0.0s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:12] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:12] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [25-02-2026 16:43:13] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:13] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:14] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:14] Backing off send_request(...) for 0.4s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:15] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:15] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:16] Backing off send_request(...) for 0.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:16] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:17] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:43:17] Backing off send_request(...) for 2.2s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:43:20] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:43:20] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [25-02-2026 16:43:21] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [25-02-2026 16:43:30] ::1:52506 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:30] ::1:52506 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:30] ::1:52506 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:48] ::1:52506 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:48] ::1:52506 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:43:48] ::1:52506 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52737 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52737 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/get HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:53:59] ::1:52738 - "GET /api/v1/collections/66656510-6965-4bb6-8f84-b5a36ccbf167/count HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:27] ::1:52768 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:27] ::1:52768 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:27] ::1:52768 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:27] ::1:52768 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:27] ::1:52768 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:27] ::1:52768 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
+[33mWARNING[0m:  [25-02-2026 16:55:28] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:55:28] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:55:28] Backing off send_request(...) for 0.7s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:55:30] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:55:30] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:55:30] Backing off send_request(...) for 1.5s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:55:32] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:55:33] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[32mINFO[0m:     [25-02-2026 16:55:33] Backing off send_request(...) for 1.3s (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[33mWARNING[0m:  [25-02-2026 16:55:35] Retrying (Retry(total=1, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[33mWARNING[0m:  [25-02-2026 16:55:35] Retrying (Retry(total=0, connect=2, read=2, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))': /batch/
+[31mERROR[0m:    [25-02-2026 16:55:36] Giving up send_request(...) after 4 tries (requests.exceptions.SSLError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)'))))
+[32mINFO[0m:     [25-02-2026 16:55:56] ::1:52768 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:56] ::1:52768 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:55:56] ::1:52768 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:56:22] ::1:52768 - "POST /api/v1/collections/683d274f-85c8-4972-b7a9-baa686e26110/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:56:22] ::1:52768 - "POST /api/v1/collections/4dc7e7c9-7a0e-4b88-99f3-6d067db710cf/query HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2026 16:56:22] ::1:52768 - "POST /api/v1/collections/0048a3b0-6531-446f-a66d-d53f9f9a860e/query HTTP/1.1" 200
