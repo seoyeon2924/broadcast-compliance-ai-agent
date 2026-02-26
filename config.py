@@ -26,7 +26,7 @@ class Settings:
     # ── OpenAI (Stage 2+) ──
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
     OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-    OPENAI_EMBED_MODEL: str = os.getenv("OPENAI_EMBED_MODEL", "text-embedding-3-small")
+    OPENAI_EMBED_MODEL: str = os.getenv("OPENAI_EMBED_MODEL", "text-embedding-3-large")
 
     # ── RAG Parameters ──
     RETRIEVAL_TOP_K: int = int(os.getenv("RETRIEVAL_TOP_K", "5"))
@@ -42,6 +42,8 @@ class Settings:
         self.UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
         (self.DATA_DIR / "chroma_db").mkdir(parents=True, exist_ok=True)
 
+    # ── Cohere (Reranker) ──
+    COHERE_API_KEY: str = os.getenv("COHERE_API_KEY", "")
 
 # Singleton – directories are created on first import.
 settings = Settings()

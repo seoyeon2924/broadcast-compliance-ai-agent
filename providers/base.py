@@ -29,6 +29,6 @@ class RetrieverProvider(ABC):
     def retrieve(
         self,
         query: str,
-        top_k: int = 5,
+        top_k: int = 3,
         filters: dict | None = None,
     ) -> list[dict]: ...

@@ -28,12 +28,12 @@ _GRADE_CASES_SYSTEM = """당신은 방송심의 사례 관련성 평가 전문�
 주어진 심의 대상 문구와 위험 유형에 대해, 각 사례가 심의 판단에 관련이 있는지 평가하세요.
 
 반드시 아래 JSON 형식으로만 응답하세요:
-{
+{{
     "grades": [
-        {"doc_index": 1, "relevance": "relevant", "reason": "이유"},
-        {"doc_index": 2, "relevance": "irrelevant", "reason": "이유"}
+        {{"doc_index": 1, "relevance": "relevant", "reason": "이유"}},
+        {{"doc_index": 2, "relevance": "irrelevant", "reason": "이유"}}
     ]
-}
+}}
 relevance는 반드시 "relevant" 또는 "irrelevant" 중 하나입니다."""
 
 _GRADE_CASES_HUMAN = """## 심의 대상 문구
@@ -54,7 +54,7 @@ _REWRITE_CASE_SYSTEM = """당신은 방송심의 사례 검색 전문가입니�
 심의지적코드, 위반유형, 유사 제한표현에 집중하여 더 효과적인 검색 쿼리를 생성하세요.
 
 반드시 아래 JSON 형식으로만 응답하세요:
-{"case_query": "개선된 검색 쿼리"}"""
+{{"case_query": "개선된 검색 쿼리"}}"""
 
 _REWRITE_CASE_HUMAN = """## 심의 대상 문구
 {item_text}

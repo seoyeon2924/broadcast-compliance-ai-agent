@@ -1,7 +1,7 @@
 """
 심의 사례 검색 Tool — LangChain @tool 래퍼.
 
-cases 컬렉션에서 과거 심의 사례를 벡터 검색하여 반환한다.
+cases 컬렉션에서 과거 심의 사례를 벡터 검색 → Cohere 리랭킹하여 반환한다.
 """
 
 from __future__ import annotations
@@ -10,27 +10,19 @@ from langchain_core.tools import tool
 
 from providers.embed_openai import OpenAIEmbedProvider
 from storage.chroma_store import chroma_store
+from utils.reranker import rerank_chunks  # 🆕 리랭커 추가
 
 _embedder: OpenAIEmbedProvider | None = None
 
 
 def _get_query_embedding(query: str) -> list[float]:
-    """인덱싱과 동일한 OpenAI 임베딩으로 쿼리 벡터 생성 (1536차원)."""
     global _embedder
     if _embedder is None:
         _embedder = OpenAIEmbedProvider()
     return _embedder.embed([query])[0]
 
 
-# ───────────────────────────────────────────
-# 내부 헬퍼
-# ───────────────────────────────────────────
-
 def _parse_query_result(raw: dict) -> list[dict]:
-    """
-    chroma_store.query() 반환값(2중 리스트)을 평탄화하여
-    [{content, metadata, chroma_id, relevance_score}, ...] 리스트로 변환.
-    """
     ids = raw.get("ids", [[]])[0] or []
     documents = raw.get("documents", [[]])[0] or []
     metadatas = raw.get("metadatas", [[]])[0] or []
@@ -48,10 +40,6 @@ def _parse_query_result(raw: dict) -> list[dict]:
     return chunks
 
 
-# ───────────────────────────────────────────
-# Tool
-# ───────────────────────────────────────────
-
 @tool
 def search_cases(query: str) -> dict:
     """심의 사례 검색: 주어진 질의와 유사한 과거 심의 사례를 벡터DB에서 검색합니다.
@@ -63,11 +51,16 @@ def search_cases(query: str) -> dict:
         case_chunks — 유사 심의 사례 청크 목록 (최대 5건)
     """
     query_embedding = _get_query_embedding(query)
+
+    # 1단계: ChromaDB에서 넉넉하게 검색 (기존 5 → 20)
     raw = chroma_store.query(
         collection_key="cases",
         query_embeddings=[query_embedding],
-        n_results=5,
+        n_results=20,  # 🆕 리랭킹용으로 넉넉하게
     )
     case_chunks = _parse_query_result(raw)
 
-    return {"case_chunks": case_chunks}
+    # 2단계: Cohere 리랭킹으로 정밀 재정렬
+    reranked = rerank_chunks(query=query, chunks=case_chunks, top_n=5)
+
+    return {"case_chunks": reranked}

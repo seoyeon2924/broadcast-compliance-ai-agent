@@ -36,10 +36,21 @@ MAJOR_PATTERN = re.compile(
     re.UNICODE,
 )
 
-# ── 사례(Excel): 컬럼A 섹션 구분 ──
+# ── 사례(Excel): ● 섹션 구분 ──
+CASE_SECTION_PAT = re.compile(
+    r"●\s*(상품\s*정보|한정\s*표현|자막\s*수정|심의\s*의견|수정\s*사항|주의\s*사항)",
+    re.IGNORECASE,
+)
+# □ 제품스펙 블록 (심의 판단에 불필요 → 제거 대상)
+SPEC_BLOCK_PAT = re.compile(
+    r"\n\s*□\s*(라오메뜨|구성|제품\s*사양|제조원|주의\s*사항|배송|취소|반품|A/?S|교환|품질).*",
+    re.DOTALL,
+)
+# 하위호환용 (기존 패턴)
 CASE_SECTION_PATTERNS = [
     re.compile(r"[●■]\s*상품\s*정보", re.IGNORECASE),
     re.compile(r"[●■]\s*심의\s*의견", re.IGNORECASE),
+    re.compile(r"[●■]\s*자막\s*수정", re.IGNORECASE),
     re.compile(r"[●■]\s*수정\s*사항", re.IGNORECASE),
     re.compile(r"[●■]\s*주의\s*사항", re.IGNORECASE),
 ]
@@ -261,9 +272,12 @@ class Chunker:
     # ── 과거 심의 사례 (Excel) ──
 
     def chunk_cases(self, rows: list[dict]) -> list[dict]:
-        """과거 심의 지적 사례: 컬럼 섹션 분리, 심의의견+수정+주의 → content, 상품정보 앞 100자 → product_summary.
+        """과거 심의 사례 청킹 (개선 v4).
 
-        처리번호·처리일자를 메타데이터와 content 앞에 포함하여 구체적인 처리건 제시에 활용.
+        개선 사항:
+        1. ● 섹션 분리 → 상품정보/제품스펙(□)은 메타로만, 심의 핵심만 content
+        2. 2차 분할 시 모든 part에 헤더(처리번호/일자/지적코드) 반복 삽입
+        3. 한정표현 섹션 → 메타 + content 양쪽 반영
         """
         chunks_out: list[dict] = []
         for row_idx, row in enumerate(rows):
@@ -276,31 +290,7 @@ class Chunker:
             row_num = row.get("row", row_idx + 2)
             source_file = row.get("source_file", "")
 
-            product_summary = ""
-            content_parts: list[str] = []
-            positions: list[tuple[int, int, str]] = []
-            for pat in CASE_SECTION_PATTERNS:
-                for m in pat.finditer(opinion):
-                    positions.append((m.start(), m.end(), m.group(0).strip()))
-            positions.sort(key=lambda x: x[0])
-
-            if not positions:
-                content = opinion
-            else:
-                for i, (start, end, label) in enumerate(positions):
-                    seg_end = positions[i + 1][0] if i + 1 < len(positions) else len(opinion)
-                    segment = opinion[end:seg_end].strip()
-                    if "상품" in label and "정보" in label:
-                        product_summary = segment[:100]
-                    else:
-                        if segment:
-                            content_parts.append(segment)
-                content = "\n\n".join(content_parts) if content_parts else opinion
-
-            if not content.strip():
-                content = opinion
-
-            # 처리번호·처리일자를 content 앞에 추가 → 임베딩 및 검색 시 식별 가능
+            # ── 헤더 (모든 청크에 반복 삽입) ──
             header_parts: list[str] = []
             if case_number:
                 header_parts.append(f"[처리번호: {case_number}]")
@@ -308,14 +298,61 @@ class Chunker:
                 header_parts.append(f"[처리일자: {case_date}]")
             if violation_type:
                 header_parts.append(f"[심의지적코드: {violation_type}]")
-            if header_parts:
-                content = " ".join(header_parts) + "\n" + content
+            header = " ".join(header_parts)
 
-            # page_or_row: 처리번호가 있으면 사용, 없으면 시트:행 번호
-            page_or_row = f"처리번호:{case_number}" if case_number else f"{sheet}:Row{row_num}"
+            # ── ● 섹션 분리 ──
+            sections: dict[str, str] = {}
+            matches = list(CASE_SECTION_PAT.finditer(opinion))
+
+            if not matches:
+                core_content = opinion.strip()
+            else:
+                for i, m in enumerate(matches):
+                    sec_name = re.sub(r"\s+", "", m.group(1))
+                    sec_start = m.end()
+                    sec_end = (
+                        matches[i + 1].start()
+                        if i + 1 < len(matches)
+                        else len(opinion)
+                    )
+                    sections[sec_name] = opinion[sec_start:sec_end].strip()
+
+                # 핵심 content: 한정표현 + 자막수정 + 심의의견 + 수정사항 + 주의사항
+                core_parts: list[str] = []
+                for key in [
+                    "한정표현", "자막수정", "심의의견", "수정사항", "주의사항",
+                ]:
+                    if key in sections and sections[key].strip():
+                        text = sections[key]
+                        # □ 제품스펙 블록 제거 (배송/AS/성분 등)
+                        spec_m = SPEC_BLOCK_PAT.search(text)
+                        if spec_m:
+                            text = text[: spec_m.start()].strip()
+                        if text:
+                            core_parts.append(f"[{key}]\n{text}")
+
+                core_content = (
+                    "\n\n".join(core_parts) if core_parts else opinion.strip()
+                )
+
+            # 상품정보 → 메타만
+            product_summary = sections.get("상품정보", "")[:150] if sections else ""
+
+            # 한정표현 → 엑셀 E열이 비어있으면 섹션에서 보강
+            if "한정표현" in sections and not limit_expr:
+                limit_expr = sections["한정표현"][:200]
+
+            if not core_content.strip():
+                core_content = opinion.strip()
+
+            page_or_row_base = (
+                f"처리번호:{case_number}"
+                if case_number
+                else f"{sheet}:Row{row_num}"
+            )
 
             base_meta = {
-                "page_or_row": page_or_row,
+                "page_or_row": page_or_row_base,
                 "source_file": source_file,
                 "doc_structure_type": "case",
                 "case_number": _truncate(case_number, 50),
@@ -329,17 +366,40 @@ class Chunker:
                 "sub_detail": "",
                 "violation_type": _truncate(violation_type),
                 "limit_expression": _truncate(limit_expr),
-                "product_summary": _truncate(product_summary, 100),
+                "product_summary": _truncate(product_summary, 150),
             }
-            sub_chunks = self._secondary_split(
-                content, base_meta, source_file, len(chunks_out)
+
+            # ── 청크 생성 (헤더 반복 삽입) ──
+            full_content = (
+                (header + "\n" + core_content) if header else core_content
             )
-            for i, sc in enumerate(sub_chunks):
-                sc["chunk_index"] = len(chunks_out) + i
-                sc["page_or_row"] = base_meta["page_or_row"]
-                if len(sub_chunks) > 1:
-                    sc["page_or_row"] = f"{base_meta['page_or_row']}_part{i + 1}"
-            chunks_out.extend(sub_chunks)
+
+            if len(full_content) <= self.chunk_size:
+                chunks_out.append(
+                    {
+                        **base_meta,
+                        "content": full_content,
+                        "chunk_index": len(chunks_out),
+                    }
+                )
+            else:
+                # content만 분할, 각 part에 헤더 재삽입
+                parts = self._splitter.split_text(core_content)
+                for i, part in enumerate(parts):
+                    chunk_content = (
+                        (header + "\n" + part) if header else part
+                    )
+                    por = page_or_row_base + (
+                        f"_part{i + 1}" if len(parts) > 1 else ""
+                    )
+                    chunks_out.append(
+                        {
+                            **base_meta,
+                            "content": chunk_content,
+                            "page_or_row": por,
+                            "chunk_index": len(chunks_out),
+                        }
+                    )
 
         for i, c in enumerate(chunks_out):
             c["chunk_index"] = i
