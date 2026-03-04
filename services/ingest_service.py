@@ -5,6 +5,7 @@ Pipeline:
     파일 저장 → 파서(PDF/Excel) → 청킹 → 임베딩 → Chroma upsert → SQLite 저장
 """
 
+import logging
 import time
 from datetime import datetime
 from pathlib import Path
@@ -22,6 +23,8 @@ from ingest.parser_pdf import PDFParser
 from ingest.parser_excel import ExcelParser
 from ingest.chunker import Chunker
 from providers.embed_openai import OpenAIEmbedProvider
+
+logger = logging.getLogger(__name__)
 
 # 대용량 사례(Excel) 시 메모리·연결 부담 완화: 한 번에 처리하는 단위
 _PIPELINE_BATCH = 50   # 이 개수씩 임베딩 후 Chroma 저장 (전체를 메모리에 쌓지 않음)
@@ -105,13 +108,22 @@ class IngestService:
             if not chunks:
                 raise ValueError("문서에서 추출된 텍스트가 없습니다.")
 
+            logger.debug(
+                "청크 생성 완료: %d건 / 최대 %d자 / 평균 %d자",
+                len(chunks),
+                max(len(c["content"]) for c in chunks),
+                sum(len(c["content"]) for c in chunks) // len(chunks),
+            )
 
-            # chunks 생성 직후에 추가
-            print(f"청크 수: {len(chunks)}")
-            print(f"최대 청크 길이: {max(len(c['content']) for c in chunks)}")
-            print(f"평균 청크 길이: {sum(len(c['content']) for c in chunks) // len(chunks)}")
-            texts = [(c["content"].strip() or " ") for c in chunks]
-            total = len(texts)
+            # 임베딩용 텍스트 = content (순수 시맨틱 내용)
+            embed_texts = [(c["content"].strip() or " ") for c in chunks]
+            # Chroma documents용 = display_text (헤더 포함, LLM 컨텍스트용)
+            # display_text가 없으면 content를 그대로 사용 (법률/규정/지침은 분리 불필요)
+            display_texts = [
+                (c.get("display_text") or c["content"]).strip() or " "
+                for c in chunks
+            ]
+            total = len(embed_texts)
             collection_key = get_collection_name_for_doc_type(doc_type)
             chroma_ids = [f"{doc_id}_chunk_{c['chunk_index']}" for c in chunks]
             metadatas = [
@@ -144,14 +156,15 @@ class IngestService:
             progress = st.progress(0, text="임베딩 및 Chroma 저장 중...")
             for i in range(0, total, _PIPELINE_BATCH):
                 end = min(i + _PIPELINE_BATCH, total)
-                batch_texts = texts[i:end]
-                batch_embeddings = embedder.embed(batch_texts)
+                batch_embed = embed_texts[i:end]
+                batch_display = display_texts[i:end]
+                batch_embeddings = embedder.embed(batch_embed)
                 # Chroma는 작은 단위로 나눠 보냄 (연결/타임아웃 완화)
-                for j in range(0, len(batch_texts), _CHROMA_BATCH):
-                    j_end = min(j + _CHROMA_BATCH, len(batch_texts))
+                for j in range(0, len(batch_embed), _CHROMA_BATCH):
+                    j_end = min(j + _CHROMA_BATCH, len(batch_embed))
                     chroma_store.upsert(
                         ids=chroma_ids[i + j : i + j_end],
-                        documents=batch_texts[j:j_end],
+                        documents=batch_display[j:j_end],
                         embeddings=batch_embeddings[j:j_end],
                         metadatas=metadatas[i + j : i + j_end],
                         collection_key=collection_key,

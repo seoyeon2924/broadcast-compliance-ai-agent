@@ -26,6 +26,7 @@ _http_client = httpx.Client(verify=False)
 
 def _strip_case_header(text: str) -> str:
     """display_text 앞의 [처리번호: ...][처리일자: ...][심의지적코드: ...] 헤더 라인 제거."""
+    import re
     stripped = re.sub(
         r"^(\[(?:처리번호|처리일자|심의지적코드)\s*:[^\]]*\]\s*)+\n?",
         "",

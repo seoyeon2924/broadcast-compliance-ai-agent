@@ -1,18 +1,41 @@
 """
 Excel parser using openpyxl.
-컬럼 A~E를 별도 필드로 반환 (섹션 분리·메타데이터는 chunker에서 처리).
+헤더 행을 읽어 컬럼을 자동 매핑 (컬럼 순서 변경에 안전).
 
-컬럼 구조:
-  A: 처리번호 (case_number)
-  B: 처리일자 (case_date)
-  C: 심의의견 (opinion_note)
-  D: 심의지적코드 (violation_type)
-  E: 한정표현 (limit_expression)
+지원 헤더 → 필드 매핑:
+  심의번호/처리번호        → case_number
+  심의의견                 → opinion_note
+  작성일/처리일자          → case_date
+  위반내용/심의지적코드    → violation_type
+  한정표현                 → limit_expression
 """
 
 from pathlib import Path
 
 from openpyxl import load_workbook
+
+
+# 헤더 텍스트 → 내부 필드명 매핑 (유사 표현 포함)
+_HEADER_MAP: dict[str, str] = {
+    "심의번호": "case_number",
+    "처리번호": "case_number",
+    "심의의견": "opinion_note",
+    "작성일": "case_date",
+    "처리일자": "case_date",
+    "위반내용": "violation_type",
+    "심의지적코드": "violation_type",
+    "한정표현": "limit_expression",
+}
+
+
+def _detect_column_mapping(header_row: tuple) -> dict[int, str]:
+    """헤더 행에서 컬럼 인덱스 → 필드명 매핑을 자동 생성."""
+    mapping: dict[int, str] = {}
+    for col_idx, cell in enumerate(header_row):
+        header_text = str(cell or "").strip()
+        if header_text in _HEADER_MAP:
+            mapping[col_idx] = _HEADER_MAP[header_text]
+    return mapping
 
 
 class ExcelParser:
@@ -23,11 +46,11 @@ class ExcelParser:
         """
         Returns:
             List of {
-                "case_number": str,       # 컬럼A 처리번호
-                "case_date": str,         # 컬럼B 처리일자
-                "opinion_note": str,      # 컬럼C 심의의견 원문
-                "violation_type": str,    # 컬럼D 심의지적코드
-                "limit_expression": str,  # 컬럼E 한정표현
+                "case_number": str,       # 심의번호/처리번호
+                "case_date": str,         # 작성일/처리일자
+                "opinion_note": str,      # 심의의견 원문
+                "violation_type": str,    # 위반내용/심의지적코드
+                "limit_expression": str,  # 한정표현
                 "row": int,
                 "sheet": str,
                 "source_file": str,
@@ -40,39 +63,50 @@ class ExcelParser:
         try:
             for sheet_name in wb.sheetnames:
                 ws = wb[sheet_name]
-                for row_idx, row in enumerate(
-                    ws.iter_rows(min_row=2, values_only=True), start=2
-                ):
-                    col_a = str(row[0] or "").strip() if len(row) > 0 else ""
-                    col_b = str(row[1] or "").strip() if len(row) > 1 else ""
-                    col_c = str(row[2] or "").strip() if len(row) > 2 else ""
-                    col_d = str(row[3] or "").strip() if len(row) > 3 else ""
-                    col_e = str(row[4] or "").strip() if len(row) > 4 else ""
+                rows_iter = ws.iter_rows(values_only=True)
 
-                    # 처리번호·심의의견 중 하나라도 있으면 포함
-                    if not col_a and not col_c:
+                # 1행: 헤더 읽기 → 자동 매핑
+                header_row = next(rows_iter, None)
+                if header_row is None:
+                    continue
+                col_map = _detect_column_mapping(header_row)
+
+                if not col_map:
+                    # 헤더가 없는 시트 → 스킵
+                    continue
+
+                # 2행~: 데이터
+                for row_idx, row in enumerate(rows_iter, start=2):
+                    record: dict[str, str] = {
+                        "case_number": "",
+                        "opinion_note": "",
+                        "case_date": "",
+                        "violation_type": "",
+                        "limit_expression": "",
+                    }
+
+                    for col_idx, field_name in col_map.items():
+                        if col_idx < len(row):
+                            record[field_name] = str(row[col_idx] or "").strip()
+
+                    # 심의번호·심의의견 중 하나라도 있어야 유효
+                    if not record["case_number"] and not record["opinion_note"]:
                         continue
 
-                    # 처리일자: datetime 객체로 읽히는 경우 날짜 부분만 추출
-                    case_date = col_b
-                    if " " in col_b:
-                        case_date = col_b.split(" ")[0]
+                    # 처리일자: datetime 객체일 경우 날짜 부분만 추출
+                    if " " in record["case_date"]:
+                        record["case_date"] = record["case_date"].split(" ")[0]
 
                     # 처리번호: 소수점 제거 (openpyxl이 숫자로 읽는 경우)
-                    case_number = col_a.split(".")[0] if "." in col_a else col_a
+                    cn = record["case_number"]
+                    if "." in cn:
+                        record["case_number"] = cn.split(".")[0]
 
-                    results.append(
-                        {
-                            "case_number": case_number,
-                            "case_date": case_date,
-                            "opinion_note": col_c,
-                            "violation_type": col_d,
-                            "limit_expression": col_e,
-                            "row": row_idx,
-                            "sheet": sheet_name,
-                            "source_file": path.name,
-                        }
-                    )
+                    record["row"] = row_idx
+                    record["sheet"] = sheet_name
+                    record["source_file"] = path.name
+
+                    results.append(record)
         finally:
             wb.close()
         return results

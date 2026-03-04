@@ -8,6 +8,7 @@ ChromaDB 검색 결과를 Cohere rerank-multilingual-v3.0 모델로 재정렬하
 from __future__ import annotations
 
 import cohere
+import time
 
 from config import settings  # settings.COHERE_API_KEY 필요
 
@@ -45,6 +46,8 @@ def rerank_chunks(
     documents = [c["content"] for c in chunks]
 
     try:
+        time.sleep(7)  # 🆕 분당 10회 제한 회피용 대기
+
         response = _get_client().rerank(
             model="rerank-multilingual-v3.0",
             query=query,

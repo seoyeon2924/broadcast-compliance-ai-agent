@@ -85,7 +85,7 @@ def search_policy(query: str) -> dict:
     guideline_chunks = _parse_query_result(guide_raw)
 
     # 4) 지침도 리랭킹
-    guideline_reranked = rerank_chunks(query=query, chunks=guideline_chunks, top_n=5)
+    guideline_reranked = rerank_chunks(query=query, chunks=guideline_chunks, top_n=2)
 
     return {
         "law_chunks": law_chunks,

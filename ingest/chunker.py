@@ -272,12 +272,17 @@ class Chunker:
     # ── 과거 심의 사례 (Excel) ──
 
     def chunk_cases(self, rows: list[dict]) -> list[dict]:
-        """과거 심의 사례 청킹 (개선 v4).
+        """과거 심의 사례 청킹 (개선 v5).
 
-        개선 사항:
-        1. ● 섹션 분리 → 상품정보/제품스펙(□)은 메타로만, 심의 핵심만 content
-        2. 2차 분할 시 모든 part에 헤더(처리번호/일자/지적코드) 반복 삽입
-        3. 한정표현 섹션 → 메타 + content 양쪽 반영
+        개선 사항 (v4 → v5):
+        1. content/display_text 2중 분리
+           - content: 임베딩 전용 텍스트 (메타 헤더 제거 + 시맨틱 프리픽스 포함)
+                      → ingest_service에서 embedder.embed()의 입력으로 사용
+           - display_text: LLM 컨텍스트 / Chroma documents 저장용
+                      (처리번호/일자/지적코드 헤더 포함, 사람·LLM이 읽기 좋은 형태)
+                      → ingest_service에서 chroma_store.upsert(documents=...)로 저장
+        2. ● 섹션 분리 → 상품정보/제품스펙(□)은 메타로만, 심의 핵심만 content
+        3. violation_type·limit_expression을 content에 자연어 프리픽스로 포함 (검색 품질 향상)
         """
         chunks_out: list[dict] = []
         for row_idx, row in enumerate(rows):
@@ -290,7 +295,7 @@ class Chunker:
             row_num = row.get("row", row_idx + 2)
             source_file = row.get("source_file", "")
 
-            # ── 헤더 (모든 청크에 반복 삽입) ──
+            # ── 표시용 헤더 (display_text에만 사용) ──
             header_parts: list[str] = []
             if case_number:
                 header_parts.append(f"[처리번호: {case_number}]")
@@ -298,7 +303,7 @@ class Chunker:
                 header_parts.append(f"[처리일자: {case_date}]")
             if violation_type:
                 header_parts.append(f"[심의지적코드: {violation_type}]")
-            header = " ".join(header_parts)
+            display_header = " ".join(header_parts)
 
             # ── ● 섹션 분리 ──
             sections: dict[str, str] = {}
@@ -345,6 +350,13 @@ class Chunker:
             if not core_content.strip():
                 core_content = opinion.strip()
 
+            # ── 임베딩용 시맨틱 프리픽스 (위반유형을 자연어로) ──
+            semantic_prefix = ""
+            if violation_type:
+                semantic_prefix = f"심의 지적사항: {violation_type}\n"
+            if limit_expr:
+                semantic_prefix += f"한정표현: {limit_expr.split(chr(10))[0].strip()}\n"
+
             page_or_row_base = (
                 f"처리번호:{case_number}"
                 if case_number
@@ -369,25 +381,28 @@ class Chunker:
                 "product_summary": _truncate(product_summary, 150),
             }
 
-            # ── 청크 생성 (헤더 반복 삽입) ──
-            full_content = (
-                (header + "\n" + core_content) if header else core_content
-            )
-
-            if len(full_content) <= self.chunk_size:
+            # ── 청크 생성 (embed_text / display_text 분리) ──
+            if len(core_content) <= self.chunk_size:
+                embed_text = (semantic_prefix + core_content).strip()
+                display_text = (
+                    (display_header + "\n" + core_content)
+                    if display_header else core_content
+                )
                 chunks_out.append(
                     {
                         **base_meta,
-                        "content": full_content,
+                        "content": embed_text,
+                        "display_text": display_text,
                         "chunk_index": len(chunks_out),
                     }
                 )
             else:
-                # content만 분할, 각 part에 헤더 재삽입
                 parts = self._splitter.split_text(core_content)
                 for i, part in enumerate(parts):
-                    chunk_content = (
-                        (header + "\n" + part) if header else part
+                    embed_text = (semantic_prefix + part).strip()
+                    display_text = (
+                        (display_header + "\n" + part)
+                        if display_header else part
                     )
                     por = page_or_row_base + (
                         f"_part{i + 1}" if len(parts) > 1 else ""
@@ -395,7 +410,8 @@ class Chunker:
                     chunks_out.append(
                         {
                             **base_meta,
-                            "content": chunk_content,
+                            "content": embed_text,
+                            "display_text": display_text,
                             "page_or_row": por,
                             "chunk_index": len(chunks_out),
                         }

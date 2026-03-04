@@ -48,7 +48,7 @@ def search_cases(query: str) -> dict:
         query: 검색할 질의 문자열 (예: "오늘만 한정 가격")
 
     Returns:
-        case_chunks — 유사 심의 사례 청크 목록 (최대 5건)
+        case_chunks — 유사 심의 사례 청크 목록 (최대 20건
     """
     query_embedding = _get_query_embedding(query)
 

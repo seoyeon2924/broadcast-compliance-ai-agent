@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import logging
 import operator
+import re
 import time
 from typing import Annotated, TypedDict
 
@@ -134,6 +135,18 @@ _POLICY_REWRITE_HUMAN = """## 심의 대상 문구
 
 # ── 헬퍼 ─────────────────────────────────────────────────────────
 
+def _strip_display_header(text: str) -> str:
+    """display_text 앞의 [처리번호: ...][처리일자: ...][심의지적코드: ...] 헤더 라인 제거."""
+    # 첫 줄이 [처리번호: ...] 등의 연속 태그로만 이루어진 경우 제거
+    stripped = re.sub(
+        r"^(\[(?:처리번호|처리일자|심의지적코드)\s*:[^\]]*\]\s*)+\n?",
+        "",
+        text,
+        count=1,
+    )
+    return stripped.strip()
+
+
 def _format_chunks(chunks: list[dict], label: str) -> str:
     """검색된 chunk 리스트를 LLM 컨텍스트용 문자열로 포맷팅."""
     if not chunks:
@@ -144,7 +157,7 @@ def _format_chunks(chunks: list[dict], label: str) -> str:
         meta = chunk.get("metadata", {})
         score = chunk.get("relevance_score", 0)
         cid = chunk.get("chroma_id", "N/A")
-        content = (chunk.get("content") or "")[:500]
+        raw_content = (chunk.get("content") or "")[:500]
         source = meta.get("source_file") or meta.get("doc_filename") or "N/A"
         doc_type = meta.get("doc_type", "N/A")
         section = (
@@ -158,6 +171,9 @@ def _format_chunks(chunks: list[dict], label: str) -> str:
         case_date = meta.get("case_date", "")
         violation_type = meta.get("violation_type", "")
         if case_number or case_date:
+            # 사례 청크: metadata로 처리건 헤더를 구성하므로,
+            # content(display_text)에서 [처리번호:...] 헤더 라인을 제거하여 이중 노출 방지
+            content = _strip_display_header(raw_content)
             case_ref = ""
             if case_date:
                 case_ref += f"{case_date}에 나온 "
@@ -174,7 +190,7 @@ def _format_chunks(chunks: list[dict], label: str) -> str:
             lines.append(
                 f"[{label} {i}] (유사도: {score}, ID: {cid})\n"
                 f"  출처: {source} | 유형: {doc_type} | 섹션: {section}\n"
-                f"  내용: {content}"
+                f"  내용: {raw_content}"
             )
     return "\n\n".join(lines)
 
