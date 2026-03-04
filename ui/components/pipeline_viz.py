@@ -70,71 +70,42 @@ _JUDGMENT_STYLE = {
 # ── 파이프라인 다이어그램 (Mermaid) ────────────────────────────────
 
 def render_pipeline_diagram() -> None:
-    """LangGraph 워크플로우를 HTML/CSS 다이어그램으로 표시."""
-    node = (
-        "display:inline-block;padding:8px 20px;border-radius:6px;"
-        "font-weight:bold;font-size:13px;color:#fff;text-align:center;line-height:1.4;"
-    )
-    pill = (
-        "display:inline-block;padding:6px 20px;border-radius:20px;"
-        "font-weight:bold;font-size:13px;color:#fff;"
-    )
-    arrow = "color:#9CA3AF;font-size:20px;line-height:1;"
-    html = f"""<!DOCTYPE html>
-<html>
+    """LangGraph 워크플로우를 HTML/CSS 다이어그램으로 표시 (외부 JS 의존성 없음)."""
+    n = "display:inline-block;padding:8px 18px;border-radius:6px;font-weight:bold;font-size:13px;color:#fff;text-align:center;line-height:1.5;"
+    p = "display:inline-block;padding:6px 18px;border-radius:20px;font-weight:bold;font-size:13px;color:#fff;"
+    a = "color:#9CA3AF;font-size:18px;"
+    sub = "font-size:10px;font-weight:normal;"
+    html = f"""<!DOCTYPE html><html>
 <body style="background:transparent;margin:0;padding:12px;font-family:sans-serif;">
-<div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-
-  <span style="{pill}background:#10B981;">&#9654; START</span>
-  <span style="{arrow}">&#8595;</span>
-
-  <span style="{node}background:#3B82F6;">
-    &#127919; Orchestrator<br>
-    <span style="font-size:11px;font-weight:normal;">위험유형 분류 + 쿼리 생성</span>
-  </span>
-  <span style="{arrow}">&#8595;</span>
-
-  <div style="display:flex;gap:20px;align-items:center;">
-    <span style="{node}background:#F59E0B;">
-      &#128203; CaseAgent<br>
-      <span style="font-size:11px;font-weight:normal;">사례 검색·평가·재작성</span>
-    </span>
-    <span style="color:#D1D5DB;font-size:22px;">&#8214;</span>
-    <span style="{node}background:#8B5CF6;">
-      &#128220; PolicyAgent<br>
-      <span style="font-size:11px;font-weight:normal;">법령·규정·지침 검색·평가·재작성</span>
-    </span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+  <span style="{p}background:#10B981;">&#9654; START</span>
+  <span style="{a}">&#8595;</span>
+  <span style="{n}background:#3B82F6;">&#127919; Orchestrator<br><span style="{sub}">위험유형 분류 + 검색 쿼리 생성</span></span>
+  <span style="{a}">&#8595;</span>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <span style="{n}background:#F59E0B;">&#128203; CaseAgent<br><span style="{sub}">사례 검색·평가·재작성</span></span>
+    <span style="color:#D1D5DB;font-size:20px;">&#8214;</span>
+    <span style="{n}background:#8B5CF6;">&#128220; PolicyAgent<br><span style="{sub}">법령·규정·지침 검색·평가·재작성</span></span>
   </div>
-  <span style="{arrow}">&#8595;</span>
-
-  <span style="{node}background:#EC4899;">
-    &#9878;&#65039; Synthesizer<br>
-    <span style="font-size:11px;font-weight:normal;">근거 통합 &#8594; 최종 판정</span>
-  </span>
-  <span style="{arrow}">&#8595;</span>
-
-  <span style="{node}background:#14B8A6;">
-    &#9989; GradeAnswer<br>
-    <span style="font-size:11px;font-weight:normal;">판정 품질 검증</span>
-  </span>
-
-  <div style="display:flex;gap:48px;margin-top:4px;">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+  <span style="{a}">&#8595;</span>
+  <span style="{n}background:#EC4899;">&#9878;&#65039; Synthesizer<br><span style="{sub}">근거 통합 → 최종 판정</span></span>
+  <span style="{a}">&#8595;</span>
+  <span style="{n}background:#14B8A6;">&#9989; GradeAnswer<br><span style="{sub}">판정 품질 검증</span></span>
+  <div style="display:flex;gap:40px;margin-top:4px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;">
       <span style="font-size:11px;color:#9CA3AF;">pass</span>
-      <span style="{arrow}">&#8595;</span>
-      <span style="{pill}background:#6366F1;">&#9873; END</span>
+      <span style="{a}">&#8595;</span>
+      <span style="{p}background:#6366F1;">&#9873; END</span>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;">
       <span style="font-size:11px;color:#9CA3AF;">fail</span>
-      <span style="{arrow}">&#8593;</span>
+      <span style="{a}">&#8593;</span>
       <span style="font-size:11px;color:#9CA3AF;">Synthesizer 재시도</span>
     </div>
   </div>
-
 </div>
-</body>
-</html>"""
-    components.html(html, height=380, scrolling=False)
+</body></html>"""
+    components.html(html, height=360, scrolling=False)
 
 
 # ── tool_logs 파싱 ─────────────────────────────────────────────────
@@ -214,7 +185,6 @@ def render_pipeline_result(tool_logs: list[dict], judgment: str = "") -> None:
                 step_label = _STEP_LABELS.get(step, step)
                 elapsed = log.get("elapsed", 0)
 
-                # 단계별 요약 카드
                 _render_step_card(step, step_label, elapsed, log)
                 if idx < len(node_logs) - 1:
                     st.markdown("---")

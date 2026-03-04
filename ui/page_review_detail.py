@@ -6,14 +6,36 @@ AI recommendation + human final decision in a single view.
 import streamlit as st
 
 from services.review_service import ReviewService
-from services.rag_service import RAGService
+from services.rag_service import RAGService, NODE_DISPLAY
 from ui.components.status_badge import render_status_badge
 from ui.components.pipeline_viz import (
-    render_pipeline_diagram,
     render_pipeline_result,
-    render_progress_header,
     render_execution_summary,
 )
+
+
+# ── 실시간 스트리밍 AI 실행 ────────────────────────────────────────
+
+def _run_ai_with_streaming(request_id: str) -> None:
+    """st.status()로 노드별 실시간 진행 표시하면서 AI 심의 실행."""
+
+    with st.status("🚀 AI 심의 파이프라인 실행 중...", expanded=True) as status:
+        try:
+            for event in RAGService.stream_recommendation(request_id):
+                node = event.get("node", "")
+                summary = event.get("summary", "")
+                elapsed = event.get("elapsed", 0)
+                display = NODE_DISPLAY.get(node, {"icon": "⚙️", "label": node})
+
+                st.write(
+                    f"{display['icon']} **{display['label']}** — {summary}  `{elapsed:.1f}s`"
+                )
+
+            status.update(label="✅ AI 심의 완료!", state="complete", expanded=True)
+
+        except Exception as e:
+            status.update(label=f"⛔ 실패: {e}", state="error")
+            st.error(f"AI 추천 실패: {e}")
 
 
 def render() -> None:
@@ -66,24 +88,14 @@ def render() -> None:
     # ──────────────────────────────────
     st.subheader("AI 심의 추천")
 
-    # ── 파이프라인 구조 안내 ──
-    with st.expander("🔍 AI 파이프라인 구조 (Multi-Agent Self-Corrective RAG)", expanded=False):
-        render_pipeline_diagram()
-
     can_run_ai = req["status"] in ("REQUESTED",)
     if st.button(
         "AI 심의 추천 실행",
         type="primary",
         disabled=not can_run_ai,
     ):
-        render_progress_header()
-        with st.spinner("AI 추천 생성 중... (Orchestrator → CaseAgent ∥ PolicyAgent → Synthesizer → GradeAnswer)"):
-            try:
-                RAGService.run_recommendation(request_id)
-                st.success("AI 추천이 완료되었습니다.")
-                st.rerun()
-            except Exception as e:
-                st.error(f"AI 추천 실패: {e}")
+        _run_ai_with_streaming(request_id)
+        st.rerun()
 
     if req["status"] == "AI_RUNNING":
         st.info("AI가 추천 결과를 생성 중입니다...")

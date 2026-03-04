@@ -685,3 +685,60 @@ class ReviewChain:
                 "references": [],
                 "tool_logs": [{"step": "error", "message": str(e)}],
             }
+
+    def stream(
+        self,
+        item_text: str,
+        category: str = "",
+        broadcast_type: str = "",
+    ):
+        """노드별 스트리밍 실행 — 각 노드 완료 시 (node_name, state_update) yield.
+
+        UI에서 실시간 진행 표시에 사용:
+            for node_name, update in chain.stream(item_text):
+                # node_name: "orchestrator", "case_agent", "policy_agent", ...
+                # update: 해당 노드가 반환한 state dict
+        """
+        initial_state: ReviewState = {
+            "item_text": item_text,
+            "category": category or "미지정",
+            "broadcast_type": broadcast_type or "미지정",
+            "plan": {},
+            "case_context": [],
+            "law_chunks": [],
+            "regulation_chunks": [],
+            "guideline_chunks": [],
+            "result": {},
+            "answer_grade": "",
+            "retry_count": 0,
+            "max_retries": 2,
+            "tool_logs": [],
+        }
+
+        try:
+            run_label = item_text[:40].replace("\n", " ")
+            config = RunnableConfig(
+                run_name=f"review_chain:{run_label}",
+                tags=["review-chain", "langgraph", "multi-agent", broadcast_type or "미지정"],
+                metadata={
+                    "item_text": item_text,
+                    "category": category,
+                    "broadcast_type": broadcast_type,
+                },
+            )
+
+            # synthesizer update를 별도 추적 (retry 시 마지막 실행 결과 사용)
+            # grade_answer는 "result"를 갖지 않으므로 __done__에 synthesizer 결과 전달
+            result_update: dict = {}
+            for chunk in graph.stream(initial_state, config=config):
+                # chunk: {node_name: state_update}
+                for node_name, update in chunk.items():
+                    if node_name == "synthesizer":
+                        result_update = update  # {"result": {...}, "tool_logs": [...]}
+                    yield node_name, update
+
+            yield "__done__", result_update
+
+        except Exception as e:
+            logger.error("Graph stream 실패: %s", e)
+            yield "__error__", {"error": str(e)}
