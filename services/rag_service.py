@@ -47,6 +47,19 @@ class RAGService:
 
                 latency = int((time.time() - start) * 1000)
 
+                # tool_logs를 session_state에 저장 (UI 시각화용)
+                try:
+                    import streamlit as st
+                    if "pipeline_logs" not in st.session_state:
+                        st.session_state.pipeline_logs = {}
+                    st.session_state.pipeline_logs[item["id"]] = {
+                        "tool_logs": result.get("tool_logs", []),
+                        "judgment": result.get("judgment", ""),
+                        "latency_ms": latency,
+                    }
+                except Exception:
+                    pass  # streamlit 없는 환경 (eval 등)에서는 무시
+
                 rec_id = ReviewRepository.create_ai_recommendation(
                     review_item_id=item["id"],
                     judgment=result.get("judgment", "주의"),

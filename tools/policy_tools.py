@@ -2,7 +2,7 @@
 규정·지침 검색 Tool — LangChain @tool 래퍼.
 
 regulations(법률 + 규정) 컬렉션과 guidelines(지침) 컬렉션에서
-관련 근거를 벡터 검색 → Cohere 리랭킹하여 반환한다.
+관련 근거를 하이브리드 검색(BM25+Vector+RRF) → Cohere 리랭킹하여 반환한다.
 """
 
 from __future__ import annotations
@@ -11,7 +11,8 @@ from langchain_core.tools import tool
 
 from providers.embed_openai import OpenAIEmbedProvider
 from storage.chroma_store import chroma_store
-from utils.reranker import rerank_chunks  # 🆕 리랭커 추가
+from utils.hybrid_search import get_hybrid_engine
+from utils.reranker import rerank_chunks
 
 _LAW_DOC_TYPES = {"법령", "law"}
 _embedder: OpenAIEmbedProvider | None = None
@@ -24,27 +25,9 @@ def _get_query_embedding(query: str) -> list[float]:
     return _embedder.embed([query])[0]
 
 
-def _parse_query_result(raw: dict) -> list[dict]:
-    ids = raw.get("ids", [[]])[0] or []
-    documents = raw.get("documents", [[]])[0] or []
-    metadatas = raw.get("metadatas", [[]])[0] or []
-    distances = raw.get("distances", [[]])[0] or []
-
-    chunks: list[dict] = []
-    for idx in range(len(ids)):
-        distance = distances[idx] if idx < len(distances) else 0.0
-        chunks.append({
-            "content": documents[idx] if idx < len(documents) else "",
-            "metadata": metadatas[idx] if idx < len(metadatas) else {},
-            "chroma_id": ids[idx],
-            "relevance_score": round(1.0 - distance, 4),
-        })
-    return chunks
-
-
 @tool
 def search_policy(query: str) -> dict:
-    """규정·지침 검색: 주어진 질의와 관련된 법률, 규정, 지침 근거를 벡터DB에서 검색합니다.
+    """규정·지침 검색: 주어진 질의와 관련된 법률, 규정, 지침 근거를 하이브리드 검색합니다.
 
     Args:
         query: 검색할 질의 문자열 (예: "방송 한정판매 긴급성 표현")
@@ -55,17 +38,20 @@ def search_policy(query: str) -> dict:
         guideline_chunks — 지침 관련 청크
     """
     query_embedding = _get_query_embedding(query)
+    engine = get_hybrid_engine()
 
-    # 1) regulations 컬렉션 검색 (기존 10 → 20)
-    reg_raw = chroma_store.query(
+    # 1) regulations 컬렉션 하이브리드 검색
+    reg_results = engine.search(
         collection_key="regulations",
-        query_embeddings=[query_embedding],
-        n_results=20,  # 🆕 리랭킹용으로 넉넉하게
+        query_text=query,
+        query_embedding=query_embedding,
+        vector_top_n=20,
+        bm25_top_n=20,
+        final_top_n=20,
     )
-    reg_chunks = _parse_query_result(reg_raw)
 
     # 2) 리랭킹 먼저, 그 후 법률/규정 분류
-    reg_reranked = rerank_chunks(query=query, chunks=reg_chunks, top_n=10)
+    reg_reranked = rerank_chunks(query=query, chunks=reg_results, top_n=10)
 
     law_chunks: list[dict] = []
     regulation_chunks: list[dict] = []
@@ -76,16 +62,18 @@ def search_policy(query: str) -> dict:
         else:
             regulation_chunks.append(chunk)
 
-    # 3) guidelines 컬렉션 검색 (기존 5 → 15)
-    guide_raw = chroma_store.query(
+    # 3) guidelines 컬렉션 하이브리드 검색
+    guide_results = engine.search(
         collection_key="guidelines",
-        query_embeddings=[query_embedding],
-        n_results=15,  # 🆕 리랭킹용으로 넉넉하게
+        query_text=query,
+        query_embedding=query_embedding,
+        vector_top_n=15,
+        bm25_top_n=15,
+        final_top_n=15,
     )
-    guideline_chunks = _parse_query_result(guide_raw)
 
     # 4) 지침도 리랭킹
-    guideline_reranked = rerank_chunks(query=query, chunks=guideline_chunks, top_n=2)
+    guideline_reranked = rerank_chunks(query=query, chunks=guide_results, top_n=2)
 
     return {
         "law_chunks": law_chunks,

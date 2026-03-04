@@ -8,6 +8,12 @@ import streamlit as st
 from services.review_service import ReviewService
 from services.rag_service import RAGService
 from ui.components.status_badge import render_status_badge
+from ui.components.pipeline_viz import (
+    render_pipeline_diagram,
+    render_pipeline_result,
+    render_progress_header,
+    render_execution_summary,
+)
 
 
 def render() -> None:
@@ -60,13 +66,18 @@ def render() -> None:
     # ──────────────────────────────────
     st.subheader("AI 심의 추천")
 
+    # ── 파이프라인 구조 안내 ──
+    with st.expander("🔍 AI 파이프라인 구조 (Multi-Agent Self-Corrective RAG)", expanded=False):
+        render_pipeline_diagram()
+
     can_run_ai = req["status"] in ("REQUESTED",)
     if st.button(
         "AI 심의 추천 실행",
         type="primary",
         disabled=not can_run_ai,
     ):
-        with st.spinner("AI 추천 생성 중..."):
+        render_progress_header()
+        with st.spinner("AI 추천 생성 중... (Orchestrator → CaseAgent ∥ PolicyAgent → Synthesizer → GradeAnswer)"):
             try:
                 RAGService.run_recommendation(request_id)
                 st.success("AI 추천이 완료되었습니다.")
@@ -95,7 +106,7 @@ def render() -> None:
 
                 rec = item.get("ai_recommendation")
                 if rec:
-                    _render_recommendation(rec)
+                    _render_recommendation(rec, item_id=item.get("id", ""))
                 else:
                     st.caption(
                         "아직 AI 추천이 실행되지 않았습니다."
@@ -175,11 +186,21 @@ _JUDGMENT_ICON = {
 }
 
 
-def _render_recommendation(rec: dict) -> None:
+def _render_recommendation(rec: dict, item_id: str = "") -> None:
     """Render a single AI recommendation block."""
     icon = _JUDGMENT_ICON.get(rec["judgment"], "\u26AA")
     st.markdown(f"**판단:** {icon} {rec['judgment']}")
     st.markdown(f"**사유:** {rec['reason']}")
+
+    # ── 파이프라인 실행 로그 시각화 ──
+    pipeline_data = st.session_state.get("pipeline_logs", {}).get(item_id)
+    if pipeline_data:
+        with st.expander("🔬 AI 파이프라인 실행 상세", expanded=False):
+            render_execution_summary(pipeline_data.get("tool_logs", []))
+            render_pipeline_result(
+                pipeline_data.get("tool_logs", []),
+                judgment=pipeline_data.get("judgment", ""),
+            )
 
     all_refs = rec.get("references") or []
     refs = [r for r in all_refs if (r.get("content") or "").strip()]

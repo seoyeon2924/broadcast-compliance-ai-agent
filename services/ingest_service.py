@@ -174,6 +174,10 @@ class IngestService:
                 progress.progress(end / total, text=f"임베딩·Chroma 저장 중... ({end}/{total})")
             progress.empty()
 
+            # Chroma 인덱싱 후 BM25 인덱스 캐시 무효화 (하이브리드 검색 인덱스 갱신)
+            from utils.hybrid_search import get_hybrid_engine
+            get_hybrid_engine().invalidate(collection_key)
+
             # 6. SQLite 청크 레코드
             chunk_records = [
                 {

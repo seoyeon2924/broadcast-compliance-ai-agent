@@ -21,3 +21,6 @@ langsmith>=0.1.0
 
 # ── Text splitting (structure-aware chunking) ──
 langchain-text-splitters>=0.3.0
+
+# ── Hybrid Search (BM25) ──
+rank-bm25>=0.2.2

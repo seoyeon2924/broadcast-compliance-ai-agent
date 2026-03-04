@@ -40844,3 +40844,1016 @@ ValueError: Collection general does not exist.
 [32mINFO[0m:     [04-03-2026 14:08:05] ::1:56312 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
 [32mINFO[0m:     [04-03-2026 14:08:11] ::1:56312 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
 [32mINFO[0m:     [04-03-2026 14:08:24] ::1:56312 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:08:31] ::1:56312 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57277 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57278 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57277 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57278 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57280 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57280 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57280 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57280 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:14] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:15] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:15] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:15] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:15] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:22] ::1:57280 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:22] ::1:57280 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:22] ::1:57280 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:22] ::1:57280 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:24] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:31] ::1:57280 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:33] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:38] ::1:57280 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:45] ::1:57279 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:47] ::1:57280 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:52:54] ::1:57280 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:53:17] ::1:57326 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:53:17] ::1:57280 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:53:25] ::1:57280 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:53:26] ::1:57326 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:53:36] ::1:57326 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:53:45] ::1:57326 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:07] ::1:57326 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:07] ::1:57361 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:14] ::1:57361 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:17] ::1:57326 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:23] ::1:57361 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:31] ::1:57361 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:40] ::1:57361 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:54:47] ::1:57361 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:55:08] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:55:08] ::1:57361 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:55:16] ::1:57361 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:55:17] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:55:26] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:55:35] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:03] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:03] ::1:57428 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:11] ::1:57428 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:12] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:41] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:41] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:49] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:50] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:56:59] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:00] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:08] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:08] ::1:57396 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:17] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:24] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:54] ::1:57486 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:57:54] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:58:01] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:58:03] ::1:57486 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:58:31] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:58:31] ::1:57486 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:58:39] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:58:40] ::1:57486 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:07] ::1:57486 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:07] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:15] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:26] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:33] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:43] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 14:59:50] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:00:14] ::1:57448 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:00:14] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:00:21] ::1:57448 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:00:23] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:00:32] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:00:41] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:02] ::1:57595 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:02] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:09] ::1:57595 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:11] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:18] ::1:57595 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:20] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:26] ::1:57595 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:29] ::1:57567 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:35] ::1:57595 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:01:43] ::1:57595 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:02:12] ::1:57595 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:02:12] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:02:19] ::1:57595 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:02:21] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:02:32] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:02:43] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:03:11] ::1:57671 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:03:11] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:03:19] ::1:57671 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:03:20] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:03:29] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:03:39] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:03] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:03] ::1:57700 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:10] ::1:57700 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:12] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:22] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:31] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:54] ::1:57727 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:04:54] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:02] ::1:57727 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:04] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:13] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:16] ::1:57727 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:23] ::1:57642 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:23] ::1:57727 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:32] ::1:57727 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:05:40] ::1:57727 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:35] ::1:57852 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:35] ::1:57852 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:35] ::1:57853 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:35] ::1:57853 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:35] ::1:57853 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:35] ::1:57853 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:36] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:43] ::1:57853 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:43] ::1:57853 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:43] ::1:57853 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:43] ::1:57853 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:45] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:53] ::1:57853 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:10:55] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:00] ::1:57853 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:04] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:26] ::1:57853 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:26] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:34] ::1:57853 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:35] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:45] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:11:54] ::1:57853 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:16] ::1:57853 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:16] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:23] ::1:57910 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:25] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:33] ::1:57910 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:38] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:40] ::1:57910 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:48] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:49] ::1:57910 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:12:56] ::1:57910 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:13:18] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:13:19] ::1:57910 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:13:26] ::1:57910 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:13:28] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:13:55] ::1:57910 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:13:55] ::1:57958 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:03] ::1:57958 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:04] ::1:57958 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:34] ::1:57958 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:34] ::1:57981 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:41] ::1:57981 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:43] ::1:57981 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:51] ::1:57981 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:52] ::1:57981 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:14:59] ::1:57981 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:01] ::1:57981 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:08] ::1:57981 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:15] ::1:57981 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:35] ::1:57981 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:35] ::1:58013 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:43] ::1:58013 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:45] ::1:58013 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:15:54] ::1:58013 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:16:03] ::1:58013 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:16:28] ::1:58013 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:16:28] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:16:35] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:16:37] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:16:46] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:11] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:11] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:18] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:30] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:37] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:46] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:17:54] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:16] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:16] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:23] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:25] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:44] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:44] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:52] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:18:53] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:01] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:02] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:08] ::1:58041 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:12] ::1:58041 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:40] ::1:58041 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:40] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:47] ::1:58144 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:49] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:19:58] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:20:08] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:20:34] ::1:58144 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:20:34] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:20:42] ::1:58144 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:20:43] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:20:52] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:01] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:20] ::1:58144 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:20] ::1:58200 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:28] ::1:58200 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:29] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:38] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:21:48] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:06] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:07] ::1:58200 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:14] ::1:58200 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:16] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:24] ::1:58200 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:25] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:32] ::1:58200 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:34] ::1:58200 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:41] ::1:58200 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:22:48] ::1:58200 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58595 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58595 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[31mERROR[0m:    [04-03-2026 15:49:48] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [04-03-2026 15:49:48] ::1:58596 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58612 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58613 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58613 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58613 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58612 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58613 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:38] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:39] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:46] ::1:58612 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:46] ::1:58612 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:46] ::1:58612 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:46] ::1:58612 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:49] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:55] ::1:58612 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:50:59] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:51:03] ::1:58612 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:51:09] ::1:58612 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:51:12] ::1:58612 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:51:19] ::1:58612 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58670 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58670 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[31mERROR[0m:    [04-03-2026 15:52:26] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [04-03-2026 15:52:26] ::1:58671 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58671 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58671 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58671 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58671 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:52:54] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:01] ::1:58684 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:01] ::1:58684 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:01] ::1:58684 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:01] ::1:58684 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:03] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:10] ::1:58684 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:12] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:18] ::1:58684 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:22] ::1:58684 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:27] ::1:58684 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 15:53:34] ::1:58684 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58858 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58859 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58858 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58859 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58861 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58860 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58860 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58860 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58861 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58860 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:06] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:07] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:14] ::1:58861 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:14] ::1:58861 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:14] ::1:58861 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:14] ::1:58861 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:16] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:24] ::1:58860 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:25] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:31] ::1:58861 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:00:41] ::1:58861 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58936 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58936 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[31mERROR[0m:    [04-03-2026 16:03:08] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [04-03-2026 16:03:08] ::1:58937 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [04-03-2026 16:03:38] ::1:58947 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:38] ::1:58947 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:38] ::1:58947 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:38] ::1:58947 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:39] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:46] ::1:58947 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:46] ::1:58947 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:46] ::1:58947 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:46] ::1:58947 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:49] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:03:57] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:04:06] ::1:58947 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59015 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59015 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/regulations?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/guidelines?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/cases?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[31mERROR[0m:    [04-03-2026 16:07:29] Collection general does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    |     response = await f(request)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    |     return await future
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    |     result = context.run(func, *args)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    |     return self._api.get_collection(
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection general does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\fastapi\routing.py", line 316, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "D:\AI_master\BroadcastComlianceAgent\.venv\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection general does not exist.
+[32mINFO[0m:     [04-03-2026 16:07:29] ::1:59016 - "GET /api/v1/collections/general?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59028 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59028 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59028 - "GET /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59028 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59029 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59029 - "GET /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:22] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:23] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:30] ::1:59029 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:30] ::1:59029 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:30] ::1:59029 - "GET /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/count HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:30] ::1:59029 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/get HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:33] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:40] ::1:59029 - "POST /api/v1/collections/c6dbc33f-a393-4c7c-aac1-52139f66b1be/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:47] ::1:59029 - "POST /api/v1/collections/a19c42e8-00fd-4876-9afb-48455c8704a7/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2026 16:08:47] ::1:59029 - "POST /api/v1/collections/4c779a0a-d1de-4612-af6f-d263674beb0a/query HTTP/1.1" 200
