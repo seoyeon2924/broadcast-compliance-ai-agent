@@ -53,6 +53,7 @@ class ChromaStore:
             self._client = chromadb.HttpClient(
                 host=settings.CHROMA_HOST,
                 port=settings.CHROMA_PORT,
+                headers={"Content-Type": "application/json"},
             )
         return self._client
 
